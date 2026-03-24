@@ -300,23 +300,23 @@ export default function RangelLandingPage() {
             {[
               {
                 title: "ALMOFADA",
-                img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80"
+                img: "https://rangel-production.s3.sa-east-1.amazonaws.com/almofada_01.png"
               },
               {
                 title: "BISNAGA",
-                img: "https://images.unsplash.com/photo-1627918345266-9df2ee4bf363?auto=format&fit=crop&w=400&q=80"
+                img: "https://rangel-production.s3.sa-east-1.amazonaws.com/bisnaga_01.png"
               },
               {
                 title: "POUCH",
-                img: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=400&q=80"
+                img: "https://rangel-production.s3.sa-east-1.amazonaws.com/pouch_01.png"
               },
               {
                 title: "SANFONADA",
-                img: "https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=400&q=80"
+                img: "https://rangel-production.s3.sa-east-1.amazonaws.com/sanfonada_01.png"
               },
               {
                 title: "STAND UP",
-                img: "https://images.unsplash.com/photo-1606859191214-25806e8e2423?auto=format&fit=crop&w=400&q=80"
+                img: "https://rangel-production.s3.sa-east-1.amazonaws.com/stand_up_01.png"
               }
             ].map((prod, i) => (
               <motion.div 
@@ -327,10 +327,10 @@ export default function RangelLandingPage() {
                 transition={{ delay: i * 0.1 }}
                 className="flex flex-col items-center group cursor-pointer"
               >
-                <div className="w-full aspect-[4/5] rounded-[24px] border border-blue-100 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] mb-4 overflow-hidden relative transition-all duration-500 group-hover:shadow-[0_20px_40px_rgb(37,99,235,0.15)] group-hover:-translate-y-2 group-hover:border-blue-300">
+                <div className="w-full aspect-[4/5] rounded-[24px] border border-blue-100 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] mb-4 overflow-hidden relative transition-all duration-500 group-hover:shadow-[0_20px_40px_rgb(37,99,235,0.15)] group-hover:-translate-y-2 group-hover:border-blue-300 flex items-center justify-center p-4">
                   {/* Edite a imagem abaixo (recomendo imagens com fundo transparente e object-contain ou fotos inteiras) */}
-                  <img src={prod.img} alt={prod.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-slate-900/5 group-hover:bg-transparent transition-colors duration-500" />
+                  <img src={prod.img} alt={prod.title} className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-slate-900/5 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
                 </div>
                 <div className="bg-blue-500/90 text-white font-bold text-[10px] sm:text-xs tracking-widest py-2.5 px-2 rounded-full w-full text-center shadow-sm transition-all duration-300 group-hover:bg-blue-600 group-hover:shadow-md truncate border border-blue-400">
                   {prod.title}
@@ -380,20 +380,93 @@ export default function RangelLandingPage() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="sobre" className="py-24 px-6 relative">
-         <div className="absolute left-1/2 top-1/2 max-w-full w-[800px] h-[400px] bg-slate-100/50 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 -z-10" />
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Sobre a Rangel</h2>
-            <p className="text-2xl md:text-3xl text-slate-900 leading-snug font-medium">
-              A Rangel Embalagens é uma indústria especializada em soluções flexíveis para alimentos, oferecendo qualidade, tecnologia e confiança para empresas de todos os portes. Com um <span className="text-blue-600">modelo de produção acessível</span>, permite que pequenos negócios tenham embalagens de alto nível sem a necessidade de grandes volumes.
-            </p>
-          </motion.div>
+      {/* About Section - Refined Ethos Style */}
+      <section id="sobre" className="py-24 px-6 relative bg-slate-950 overflow-hidden">
+        {/* Background Effects - More dramatic like Ethos reference */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-20" 
+               style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Side - Title Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/30">
+                  <Package className="text-white w-7 h-7" />
+                </div>
+                <span className="font-bold text-2xl tracking-tight text-white">Rangel<span className="text-blue-500">.</span></span>
+              </div>
+              
+              <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-6">
+                Conheça a <br />
+                <span className="text-blue-500">Rangel Embalagens</span>
+              </h2>
+              
+              <div className="w-20 h-1.5 bg-blue-600 rounded-full mb-8" />
+              
+              <p className="text-slate-400 text-lg max-w-md leading-relaxed">
+                A Rangel Embalagens é uma empresa brasileira especializada em embalagens flexíveis, focada em soluções pré-formadas e acessórios em pequenas quantidades.
+              </p>
+            </motion.div>
+
+            {/* Right Side - Floating Content Card (Ethos Style) */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-white p-8 md:p-12 rounded-[40px] shadow-[0_32px_64px_rgba(0,0,0,0.5)] relative border border-white/10"
+            >
+              <div className="space-y-6 text-slate-700 leading-relaxed">
+                <p className="text-lg font-medium text-slate-900 border-l-4 border-blue-600 pl-4">
+                  Fundada em 1991, surgimos para suprir a falta de um fornecedor <span className="text-blue-600 font-bold">ágil, confiável e com padrão de qualidade</span>, mesmo para volumes reduzidos.
+                </p>
+                
+                <p>
+                  Desde então, seguimos em crescimento sólido, impulsionados pela inovação e pela busca por soluções modernas para o setor.
+                </p>
+
+                <p>
+                  Estamos em evolução constante: investindo em tecnologia, processos e novos produtos, para entregar embalagens que valorizam a apresentação e garantem qualidade, flexibilidade e excelência em qualquer escala de produção.
+                </p>
+
+                <div className="pt-8 border-t border-slate-100">
+                  <div className="flex items-start gap-4 p-6 rounded-3xl bg-blue-50 border border-blue-100 shadow-sm">
+                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                      <ShieldCheck className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900 mb-2">Compromisso Ambiental & Conformidade</h4>
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        Atuamos em total conformidade com o <strong className="text-blue-700">Decreto nº 12.688/2025</strong>, que estabelece em âmbito nacional a obrigatoriedade da logística reversa de embalagens plásticas, com vigência desde 21 de outubro de 2025.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex gap-4 pt-4">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center hover:bg-blue-50 transition-colors group cursor-default">
+                    <Zap className="w-5 h-5 text-slate-400 group-hover:text-blue-600 transition-colors" />
+                  </div>
+                  <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center hover:bg-blue-50 transition-colors group cursor-default">
+                    <Coffee className="w-5 h-5 text-slate-400 group-hover:text-blue-600 transition-colors" />
+                  </div>
+                  <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center hover:bg-blue-50 transition-colors group cursor-default">
+                    <Factory className="w-5 h-5 text-slate-400 group-hover:text-blue-600 transition-colors" />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
