@@ -101,87 +101,144 @@ export default function RangelLandingPage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-32 px-6 relative overflow-hidden flex items-center min-h-[90vh]">
-        {/* Decorative background elements */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-50 rounded-full blur-3xl opacity-50 -z-10 translate-x-1/3 -translate-y-1/3" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-50 rounded-full blur-3xl opacity-50 -z-10 -translate-x-1/3 translate-y-1/3" />
+      {/* Hero Section - Redesigned Dark Mode */}
+      <section className="pt-32 pb-20 md:pt-40 md:pb-32 px-6 relative overflow-hidden flex items-center min-h-[95vh] bg-slate-950">
+        {/* Dynamic Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 opacity-60" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4 opacity-60" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-[0.15]" 
+               style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        </div>
 
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center w-full relative z-10">
           <motion.div 
             initial="initial"
             animate="animate"
             variants={staggerContainer}
             className="max-w-2xl"
           >
-            <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100/50 text-blue-600 text-sm font-medium mb-6">
-              <span className="flex h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
-              Alto Padrão Industrial
+            <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-8">
+              <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
+              Upgrade Industrial para sua Marca
             </motion.div>
             
-            <motion.h1 variants={fadeIn} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6">
-              Embalagens de alta qualidade para o seu produto — <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-slate-900">sem precisar comprar milhares de unidades</span>
+            <motion.h1 variants={fadeIn} className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] mb-8">
+              Embalagens de alta qualidade — <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-300">sem exigir grandes estoques</span>
             </motion.h1>
             
-            <motion.p variants={fadeIn} className="text-lg text-slate-600 mb-8 leading-relaxed">
-              A Rangel Embalagens oferece soluções flexíveis com padrão industrial, permitindo pedidos a partir de 200 unidades. Ideal para quem busca qualidade, mesmo em pequena escala.
+            <motion.p variants={fadeIn} className="text-xl text-slate-400 mb-10 leading-relaxed max-w-xl">
+              A Rangel Embalagens entrega padrão industrial para o seu produto, permitindo pedidos a partir de <strong className="text-white">200 unidades</strong>. Proteção total e design premium para o seu negócio.
             </motion.p>
             
-            <motion.ul variants={staggerContainer} className="space-y-4 mb-10">
-              {[
-                { icon: Package, text: "Pedido mínimo acessível a partir de 200 unidades" },
-                { icon: Factory, text: "Qualidade de indústria aplicada ao seu produto" },
-                { icon: ShieldCheck, text: "Preservação do aroma e proteção do conteúdo" },
-                { icon: Settings, text: "Personalização para valorizar sua marca" }
-              ].map((item, i) => (
-                <motion.li key={i} variants={fadeIn} className="flex items-center gap-3 text-slate-700 font-medium">
-                  <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm border border-slate-100">
-                    <item.icon className="w-3.5 h-3.5 text-blue-600" />
-                  </div>
-                  {item.text}
-                </motion.li>
-              ))}
-            </motion.ul>
-            
-            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
+            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-5">
               <a 
                 href="https://wa.me/5500000000000"
                 onClick={trackGoogleAdsCTA}
-                className="bg-blue-600 text-white px-8 py-4 rounded-full font-medium shadow-[0_8px_30px_rgb(37,99,235,0.24)] hover:bg-blue-700 hover:shadow-[0_8px_30px_rgb(37,99,235,0.32)] transition-all flex items-center justify-center gap-2 group"
+                className="bg-[#FACC15] text-slate-900 px-10 py-5 rounded-full font-bold shadow-[0_20px_40px_rgba(250,204,21,0.2)] hover:bg-[#EAB308] hover:shadow-[0_20px_40px_rgba(250,204,21,0.3)] hover:-translate-y-1 transition-all flex items-center justify-center gap-3 group"
               >
                 Solicitar orçamento
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
+              <a 
+                href="#solucoes"
+                className="px-10 py-5 rounded-full font-bold text-white border border-white/10 hover:bg-white/5 transition-all flex items-center justify-center gap-3"
+              >
+                Ver Soluções
+              </a>
+            </motion.div>
+            
+            <motion.div variants={fadeIn} className="mt-12 flex items-center gap-8 border-t border-white/5 pt-12">
+               <div className="flex -space-x-3">
+                  {[1,2,3,4].map(i => (
+                    <div key={i} className="w-10 h-10 rounded-full border-2 border-slate-950 bg-slate-800 flex items-center justify-center overflow-hidden">
+                      <img src={`https://i.pravatar.cc/150?u=${i+10}`} alt="User" className="w-full h-full object-cover opacity-80" />
+                    </div>
+                  ))}
+               </div>
+               <div>
+                  <div className="flex text-yellow-500 gap-0.5 mb-1">
+                    {[1,2,3,4,5].map(i => <Zap key={i} className="w-3.5 h-3.5 fill-current" />)}
+                  </div>
+                  <p className="text-sm text-slate-500 font-medium">+1.500 clientes atendidos com excelência</p>
+               </div>
             </motion.div>
           </motion.div>
           
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative lg:h-[600px] flex items-center justify-center"
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="relative h-[500px] md:h-[600px] flex items-center justify-center"
           >
-            {/* Glassmorphism backing card */}
-            <div className="absolute inset-x-8 bottom-4 top-24 bg-white/60 backdrop-blur-2xl border border-white/60 rounded-[40px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] -z-10" />
-            
-            <motion.div
-              animate={{ y: [-10, 10, -10] }}
-              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="relative z-10 w-full max-w-sm mx-auto aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-white/20"
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=800&q=80" 
-                alt="Embalagem Sanfonada Premium para Café" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 shadow-lg">
-                  <p className="text-sm font-semibold text-white">Embalagem Sanfonada</p>
-                  <p className="text-xs text-blue-100 mt-1 flex items-center gap-1"><CheckCircle2 className="w-3 h-3" /> Estrutura de alta barreira</p>
+            {/* 3-Card Composite Inspired by Reference */}
+            <div className="relative w-full max-w-md aspect-[4/5]">
+              
+              {/* Main Background Glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-600/20 blur-[100px] rounded-full -z-10" />
+
+              {/* Card 1: Main Product Image */}
+              <motion.div
+                animate={{ y: [0, -15, 0] }}
+                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                className="absolute inset-0 z-10 rounded-[40px] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.5)] border border-white/10 group"
+              >
+                <img 
+                  src="https://rangel-production.s3.sa-east-1.amazonaws.com/sanfonada_01.png" 
+                  alt="Embalagem Sanfonada Premium" 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
+                <div className="absolute bottom-8 left-8 right-8">
+                  <div className="bg-white/5 backdrop-blur-xl p-5 rounded-2xl border border-white/10 shadow-2xl">
+                    <p className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-1">Qualidade Superior</p>
+                    <p className="text-white font-bold text-lg">Embalagem Sanfonada (4 soldas)</p>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+
+              {/* Card 2: Satisfaction/Gauge (Satellite) */}
+              <motion.div
+                initial={{ x: 50, y: -20, opacity: 0 }}
+                animate={{ x: 0, y: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                whileHover={{ scale: 1.05 }}
+                className="absolute -top-10 -right-10 z-20 w-48 h-56 bg-white/10 backdrop-blur-2xl rounded-3xl border border-white/20 shadow-[-20px_20px_40px_rgba(0,0,0,0.3)] p-6 flex flex-col items-center justify-center gap-4"
+              >
+                <div className="relative w-20 h-20 flex items-center justify-center">
+                  <svg className="w-full h-full -rotate-90">
+                    <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="8" />
+                    <circle cx="40" cy="40" r="36" fill="none" stroke="#FACC15" strokeWidth="8" strokeDasharray="226" strokeDashoffset="11" />
+                  </svg>
+                  <span className="absolute font-bold text-xl text-white">95%</span>
+                </div>
+                <div className="text-center">
+                   <p className="text-xs text-slate-400 font-medium uppercase tracking-tighter">Satisfação dos</p>
+                   <p className="text-sm text-white font-bold">Nossos Clientes</p>
+                </div>
+              </motion.div>
+
+              {/* Card 3: Minimal Order (Satellite) */}
+              <motion.div
+                initial={{ x: -50, y: 20, opacity: 0 }}
+                animate={{ x: 0, y: 0, opacity: 1 }}
+                transition={{ delay: 0.7, duration: 0.8 }}
+                whileHover={{ scale: 1.05 }}
+                className="absolute -bottom-6 -left-12 z-20 w-52 bg-slate-900 shadow-2xl rounded-2xl border border-blue-500/20 p-5 flex items-center gap-4 hover:border-blue-500/40 transition-colors"
+              >
+                <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                  <Package className="w-6 h-6 text-blue-400" />
+                </div>
+                <div>
+                  <p className="text-[10px] text-blue-400 font-bold uppercase tracking-widest">Pedido Mínimo</p>
+                  <p className="text-lg text-white font-bold tabular-nums">200un</p>
+                </div>
+              </motion.div>
+
+              {/* Decorative Lines/dots from reference */}
+              <div className="absolute -top-12 -left-12 w-24 h-24 border-t-2 border-l-2 border-white/5 rounded-tl-3xl opacity-50" />
+              <div className="absolute -bottom-12 -right-12 w-24 h-24 border-b-2 border-r-2 border-white/5 rounded-br-3xl opacity-50" />
+            </div>
           </motion.div>
         </div>
       </section>
