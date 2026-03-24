@@ -242,6 +242,182 @@ export default function RangelLandingPage() {
           </motion.div>
         </div>
       </section>
+      <section className="py-24 bg-white relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-50 rounded-full blur-[100px] opacity-60" />
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-50 rounded-full blur-[100px] opacity-60" />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm font-bold uppercase tracking-wider mb-6"
+            >
+              <ShieldCheck className="w-4 h-4 text-blue-600" />
+              Autoridade Nacional
+            </motion.div>
+            
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-4xl md:text-6xl font-black text-slate-900 mb-8 tracking-tighter leading-[1.05]"
+            >
+              As marcas que você admira <br />
+              <span className="text-blue-600">já estão com a Rangel.</span>
+            </motion.h2>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-xl text-slate-500 leading-relaxed"
+            >
+              Garantimos o mesmo padrão de excelência exigido pelas maiores indústrias do país, agora disponível para escalar o seu negócio.
+            </motion.p>
+          </div>
+
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            {/* Left Column: Authority & Partnerships */}
+            <div className="lg:col-span-12">
+               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  
+                  {/* Partner 1: 3 Corações */}
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    className="group relative bg-slate-50 rounded-[40px] p-10 border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] hover:-translate-y-2"
+                  >
+                    <div className="flex flex-col h-full">
+                      <div className="h-20 mb-8 flex items-center justify-start grayscale group-hover:grayscale-0 transition-all duration-500">
+                        <img src="/3coracoes-logo.png" alt="3 Corações Logo" className="h-full object-contain" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-slate-900 mb-4">Grupo 3 Corações</h3>
+                      <p className="text-slate-500 mb-8 leading-relaxed">Referência absoluta em café no Brasil, confiando na Rangel para entregar proteção e aroma preservado.</p>
+                      
+                      <div className="mt-auto pt-8 border-t border-slate-200/60 flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center">
+                          <Coffee className="w-6 h-6 text-slate-400" />
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Produto Solução</p>
+                          <p className="text-sm font-bold text-slate-900">Embalagens para Grãos</p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Partner 2: Nestlé */}
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className="group relative bg-slate-50 rounded-[40px] p-10 border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] hover:-translate-y-2"
+                  >
+                    <div className="flex flex-col h-full">
+                      <div className="h-20 mb-8 flex items-center justify-start grayscale group-hover:grayscale-0 transition-all duration-500">
+                        <img src="/nestle-logo.png" alt="Nestlé Logo" className="h-full object-contain scale-[1.2] origin-left" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-slate-900 mb-4">Nestlé Brasil</h3>
+                      <p className="text-slate-500 mb-8 leading-relaxed">Padrão de qualidade global em alimentos, utilizando nossas soluções de alta barreira para seus produtos líderes.</p>
+                      
+                      <div className="mt-auto pt-8 border-t border-slate-200/60 flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center">
+                          <Factory className="w-6 h-6 text-slate-400" />
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Produto Solução</p>
+                          <p className="text-sm font-bold text-slate-900">Embalagens Laminadas</p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Visual Proof Card: Ninho/Nescau */}
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="lg:col-span-1 bg-blue-600 rounded-[40px] p-2 relative overflow-hidden group shadow-2xl shadow-blue-500/20"
+                  >
+                    <div className="absolute inset-x-0 bottom-0 top-0 bg-blue-700/50" />
+                    
+                    <div className="relative h-full w-full rounded-[38px] overflow-hidden bg-white/10 backdrop-blur-xl border border-white/20 flex flex-col pt-10 px-8 pb-8">
+                       <div className="flex justify-between items-start mb-8">
+                          <div>
+                            <p className="text-xs font-bold text-blue-200 uppercase tracking-widest mb-1">Qualidade Industrial</p>
+                            <h4 className="text-2xl font-bold text-white">Casos Reais</h4>
+                          </div>
+                          <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                             <Zap className="text-white w-5 h-5 fill-current" />
+                          </div>
+                       </div>
+
+                       <div className="relative h-64 mt-4">
+                          <motion.img 
+                            animate={{ rotate: [-2, 2, -2], y: [0, -10, 0] }}
+                            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                            src="/ninho.png" 
+                            className="absolute left-0 top-0 w-44 drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)] z-20"
+                          />
+                          <motion.img 
+                            animate={{ rotate: [2, -2, 2], y: [-10, 0, -10] }}
+                            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                            src="/nescau.png" 
+                            className="absolute right-0 bottom-0 w-40 drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)] z-10"
+                          />
+                       </div>
+
+                       <div className="mt-auto pt-8">
+                         <div className="flex items-center gap-3">
+                           <div className="flex -space-x-2">
+                             {[1,2,3].map(i => (
+                               <div key={i} className="w-8 h-8 rounded-full border-2 border-blue-600 bg-blue-500 flex items-center justify-center text-[10px] font-bold text-white overflow-hidden">
+                                  <img src={`https://i.pravatar.cc/100?u=q${i}`} className="w-full h-full object-cover" />
+                               </div>
+                             ))}
+                           </div>
+                           <p className="text-xs font-medium text-white/80">+1.5k marcas utilizam Rangel</p>
+                         </div>
+                       </div>
+                    </div>
+                  </motion.div>
+
+               </div>
+            </div>
+            
+          </div>
+
+          {/* Social Proof Stats Banner */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-20 pt-16 border-t border-slate-100 grid grid-cols-2 md:grid-cols-4 gap-8"
+          >
+            {[
+              { label: "Anos de Mercado", value: "30+" },
+              { label: "Clientes Atendidos", value: "1.500+" },
+              { label: "Satisfação", value: "95%" },
+              { label: "Produtos Ativos", value: "500+" }
+            ].map((stat, i) => (
+              <div key={i} className="text-center group">
+                <p className="text-4xl md:text-5xl font-black text-slate-900 mb-2 transition-transform duration-300 group-hover:scale-110 group-hover:text-blue-600">{stat.value}</p>
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">{stat.label}</p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Reconhecimento & Premiações Section */}
       <section id="reconhecimento" className="py-24 bg-white relative overflow-hidden border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -262,13 +438,6 @@ export default function RangelLandingPage() {
                 <p className="text-lg text-slate-600 leading-relaxed mb-8">
                   A Rangel é uma empresa brasileira especializada em embalagens pré-formadas e seus acessórios, entregando inovação e proteção para marcas em todo o país.
                 </p>
-                <a 
-                  href="#sobre"
-                  className="inline-flex items-center gap-2 text-blue-600 font-bold hover:gap-3 transition-all"
-                >
-                  Saiba mais sobre nossa história
-                  <ChevronRight className="w-5 h-5" />
-                </a>
               </motion.div>
             </div>
 
@@ -337,90 +506,6 @@ export default function RangelLandingPage() {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-      <section className="py-24 bg-white relative overflow-hidden">
-        {/* Soft aura background details behind the grid */}
-        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 opacity-70 pointer-events-none" />
-        
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-            
-            {/* Left side: Copy */}
-            <motion.div 
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 text-sm font-semibold mb-6">
-                <ShieldCheck className="w-4 h-4 text-blue-600" />
-                Qualidade de Indústria
-              </motion.div>
-              
-              <motion.h2 variants={fadeIn} className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight leading-[1.1]">
-                Grandes marcas confiam. <span className="text-blue-600">Pequenos negócios também podem.</span>
-              </motion.h2>
-              
-              <motion.p variants={fadeIn} className="text-lg text-slate-600 mb-8 leading-relaxed">
-                A Rangel atende grandes empresas como a <strong className="text-slate-900">3 Corações</strong> e a <strong className="text-slate-900">Nestlé</strong>, mas também possibilita que pequenos empreendedores tenham acesso ao mesmo padrão de qualidade — sem precisar investir em grandes quantidades.
-              </motion.p>
-              
-              <motion.div variants={fadeIn} className="space-y-4">
-                {[
-                  "Produção com padrão de grandes indústrias",
-                  "Pedido mínimo acessível a partir de 200 unidades",
-                  "Soluções ideais para pequenos e médios negócios"
-                ].map((text, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-600" />
-                    </div>
-                    <span className="text-slate-700 font-medium">{text}</span>
-                  </div>
-                ))}
-              </motion.div>
-            </motion.div>
-
-            {/* Right side: Image Composition (2 Imagens) */}
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="grid grid-cols-2 gap-4 md:gap-8 h-[400px] sm:h-[500px] relative z-10"
-            >
-              {/* Image 1 - 3 Corações */}
-              <div className="relative h-full w-full pt-12 md:pt-20">
-                <div className="w-full h-full rounded-3xl overflow-hidden shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 relative group transition-transform duration-300 hover:scale-[1.02]">
-                  {/* Edite a imagem abaixo: */}
-                  <img src="https://images.unsplash.com/photo-1606859191214-25806e8e2423?auto=format&fit=crop&w=600&q=80" alt="Cliente 1 Rangel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent p-5">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                        <span className="font-bold text-green-800 text-[10px] text-center leading-none">3<br/>Cor</span>
-                      </div>
-                      <p className="text-white font-semibold text-sm">Alta Barreira</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Image 2 - Nestlé */}
-              <div className="relative h-full w-full pb-12 md:pb-20">
-                <div className="w-full h-full rounded-3xl overflow-hidden shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 relative group transition-transform duration-300 hover:scale-[1.02]">
-                  {/* Edite a imagem abaixo: */}
-                  <img src="https://images.unsplash.com/photo-1498604218824-388fbfeb2b06?auto=format&fit=crop&w=600&q=80" alt="Cliente 2 Rangel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  
-                  <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-md rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg border border-white/50">
-                     <span className="font-bold text-blue-800 text-xs">Nst</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-            
           </div>
         </div>
       </section>
