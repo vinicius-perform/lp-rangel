@@ -242,8 +242,104 @@ export default function RangelLandingPage() {
           </motion.div>
         </div>
       </section>
+      {/* Reconhecimento & Premiações Section */}
+      <section id="reconhecimento" className="py-24 bg-white relative overflow-hidden border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-12 gap-16 items-center">
+            {/* Left: Intro Copy */}
+            <div className="lg:col-span-5">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider mb-6">
+                  A Rangel
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-6">
+                  Liderança e excelência em <span className="text-blue-600">embalagens flexíveis</span>
+                </h2>
+                <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                  A Rangel é uma empresa brasileira especializada em embalagens pré-formadas e seus acessórios, entregando inovação e proteção para marcas em todo o país.
+                </p>
+                <a 
+                  href="#sobre"
+                  className="inline-flex items-center gap-2 text-blue-600 font-bold hover:gap-3 transition-all"
+                >
+                  Saiba mais sobre nossa história
+                  <ChevronRight className="w-5 h-5" />
+                </a>
+              </motion.div>
+            </div>
 
-      {/* Social Proof */}
+            {/* Right: Stats Grid */}
+            <div className="lg:col-span-7">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {[
+                  { value: "91,9%", label: "Confiável", color: "text-blue-600" },
+                  { value: "59,5%", label: "Rápido", color: "text-blue-500" },
+                  { value: "32,4%", label: "Útil", color: "text-blue-400" }
+                ].map((stat, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="p-8 rounded-[32px] bg-slate-50 border border-slate-100 flex flex-col items-center text-center group hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all"
+                  >
+                    <span className={`text-3xl md:text-4xl font-black mb-2 ${stat.color}`}>{stat.value}</span>
+                    <div className="w-10 h-1 bg-slate-200 rounded-full mb-4 group-hover:bg-blue-600 transition-colors" />
+                    <p className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-2">{stat.label}</p>
+                    <p className="text-[10px] text-slate-400 leading-tight">
+                      Dos clientes que responderam nossa pesquisa de satisfação.
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Awards Section */}
+          <div className="mt-24 pt-16 border-t border-slate-100">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Premiações e Reconhecimentos</h3>
+              <p className="text-slate-500">Excelência reconhecida pelas principais instituições do setor</p>
+            </motion.div>
+
+            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
+              {[
+                { name: "Prêmio ABRE 2013", img: "https://www.rangel.ind.br/build/images/abre.fd8905a0.png", year: "2013" },
+                { name: "EmbalagemMarca 2017", img: "https://www.rangel.ind.br/build/images/embalagem-marca.54ff2b99.jpg", year: "2017" },
+                { name: "Grandes Cases 2017", img: "https://www.rangel.ind.br/build/images/grandes-cases-de-embalagem.11040f79.png", year: "2017" }
+              ].map((award, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 0.7 }}
+                  whileHover={{ opacity: 1, scale: 1.05 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.2 }}
+                  className="flex flex-col items-center gap-4 group"
+                >
+                  <div className="h-16 md:h-20 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+                    <img src={award.img} alt={award.name} className="h-full object-contain" />
+                  </div>
+                  <div className="text-center">
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">{award.name}</p>
+                    <span className="text-xs font-medium text-slate-300">{award.year}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="py-24 bg-white relative overflow-hidden">
         {/* Soft aura background details behind the grid */}
         <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 opacity-70 pointer-events-none" />
