@@ -229,9 +229,9 @@ export default function RangelLandingPage() {
           </div>
           
           {/* Coluna Direita - Produto e Cards Flutuantes */}
-          <div className="relative flex items-center justify-center mt-16 lg:mt-0 w-full">
+          <div className="relative flex items-center justify-center mt-16 lg:mt-0 w-full px-4 sm:px-0">
             {/* Box translúcido com borda de glow azul - Estágio do Produto (Vitrine) */}
-            <div className="relative w-full max-w-[480px] xl:max-w-[520px] aspect-square flex items-center justify-center">
+            <div className="relative w-full max-w-[280px] min-[375px]:max-w-[340px] sm:max-w-[440px] md:max-w-[480px] xl:max-w-[520px] aspect-square flex items-center justify-center">
               
               {/* Painel de Fundo Externo (Linha de luz secundária paralela) */}
               <div 
@@ -287,17 +287,17 @@ export default function RangelLandingPage() {
               {/* Cards Flutuantes ao Redor */}
               
               {/* Card 1 - Satisfação (Superior Direito) */}
-              <div className="absolute -top-10 -right-4 sm:-right-8 lg:-right-10 z-30 w-[180px] sm:w-[200px] bg-[#0a1834]/85 backdrop-blur-xl rounded-[28px] border border-[#5C9DFF]/28 shadow-[0_20px_40px_rgba(0,0,0,0.6),_0_0_25px_rgba(47, 128, 255, 0.15)] p-5 sm:p-6 flex flex-col items-center justify-center gap-3 animate-float-card-1 transition-all duration-300 hover:border-[#5C9DFF]/50 hover:shadow-[0_25px_45px_rgba(47, 128, 255, 0.25)]">
-                <div className="relative w-18 h-18 sm:w-20 sm:h-20 flex items-center justify-center">
+              <div className="absolute -top-8 -right-2 sm:-top-10 sm:-right-8 lg:-right-10 z-30 w-[130px] sm:w-[200px] bg-[#0a1834]/85 backdrop-blur-xl rounded-[20px] sm:rounded-[28px] border border-[#5C9DFF]/28 shadow-[0_20px_40px_rgba(0,0,0,0.6),_0_0_25px_rgba(47, 128, 255, 0.15)] p-3 sm:p-6 flex flex-col items-center justify-center gap-2 sm:gap-3 animate-float-card-1 transition-all duration-300 hover:border-[#5C9DFF]/50 hover:shadow-[0_25px_45px_rgba(47, 128, 255, 0.25)]">
+                <div className="relative w-12 h-12 sm:w-20 sm:h-20 flex items-center justify-center">
                   <svg className="w-full h-full -rotate-90" viewBox="0 0 80 80">
                     <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(92,157,255,0.08)" strokeWidth="6" />
                     <circle cx="40" cy="40" r="34" fill="none" stroke="#FFD21F" strokeWidth="6" strokeDasharray="213.6" strokeDashoffset="10.68" strokeLinecap="round" />
                   </svg>
-                  <span className="absolute font-extrabold text-base sm:text-lg text-white">95%</span>
+                  <span className="absolute font-extrabold text-xs sm:text-lg text-white">95%</span>
                 </div>
                 <div className="text-center">
-                   <p className="text-[9px] text-[#AAB6CF] font-bold uppercase tracking-widest leading-none mb-1">Satisfação dos</p>
-                   <p className="text-xs text-white font-extrabold tracking-wide uppercase">Nossos Clientes</p>
+                   <p className="text-[7px] sm:text-[9px] text-[#AAB6CF] font-bold uppercase tracking-widest leading-none mb-1">Satisfação dos</p>
+                   <p className="text-[10px] sm:text-xs text-white font-extrabold tracking-wide uppercase">Nossos Clientes</p>
                 </div>
               </div>
 
@@ -355,7 +355,7 @@ export default function RangelLandingPage() {
                 viewport={{ once: true }}
                 whileHover={{ y: -12, scale: 1.015 }}
                 transition={{ type: "spring", stiffness: 80, damping: 20, duration: 0.8 }}
-                className="relative h-[680px] rounded-[44px] overflow-hidden shadow-[0_20px_45px_rgba(126,7,12,0.12)] hover:shadow-[0_45px_90px_rgba(126,7,12,0.28)] transition-shadow duration-[600ms] cursor-pointer"
+                className="relative h-[420px] sm:h-[520px] md:h-[680px] rounded-[44px] overflow-hidden shadow-[0_20px_45px_rgba(126,7,12,0.12)] hover:shadow-[0_45px_90px_rgba(126,7,12,0.28)] transition-shadow duration-[600ms] cursor-pointer"
               >
                 {/* Image */}
                 <img 
@@ -376,7 +376,7 @@ export default function RangelLandingPage() {
                 viewport={{ once: true }}
                 whileHover={{ y: -12, scale: 1.015 }}
                 transition={{ type: "spring", stiffness: 80, damping: 20, duration: 0.8, delay: 0.15 }}
-                className="relative h-[680px] rounded-[44px] overflow-hidden shadow-[0_20px_45px_rgba(0,58,128,0.12)] hover:shadow-[0_45px_90px_rgba(0,58,128,0.28)] transition-shadow duration-[600ms] cursor-pointer"
+                className="relative h-[420px] sm:h-[520px] md:h-[680px] rounded-[44px] overflow-hidden shadow-[0_20px_45px_rgba(0,58,128,0.12)] hover:shadow-[0_45px_90px_rgba(0,58,128,0.28)] transition-shadow duration-[600ms] cursor-pointer"
               >
                 {/* Image */}
                 <img 
