@@ -33,6 +33,8 @@ const staggerContainer = {
 export default function RangelLandingPage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
+  const [termsModalOpen, setTermsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,7 +69,7 @@ export default function RangelLandingPage() {
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans selection:bg-blue-600 selection:text-white overflow-x-hidden">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-sm' : 'bg-transparent'}`}>
+      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/50 shadow-[0_2px_15px_rgba(0,0,0,0.03)] transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/30">
@@ -101,145 +103,206 @@ export default function RangelLandingPage() {
         </div>
       </nav>
 
-      {/* Hero Section - Redesigned Dark Mode */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-32 px-6 relative overflow-hidden flex items-center min-h-[95vh] bg-slate-950">
+      {/* Hero Section - Redesigned Premium Aura Style */}
+      <section id="hero" className="pt-32 pb-20 md:pt-40 md:pb-32 px-6 relative overflow-hidden flex items-center min-h-[92vh] bg-[#020817]">
+        {/* CSS Keyframes injetados de forma nativa */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          @keyframes customFadeUp {
+            0% { opacity: 0; transform: translateY(24px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes productFloat {
+            0%, 100% { transform: translateY(0) scale(1.12); }
+            50% { transform: translateY(-10px) scale(1.12); }
+          }
+          @keyframes customFloatCard {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-6px) translateX(2px); }
+          }
+          .animate-fade-up {
+            opacity: 0;
+            animation: customFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          }
+          .product-float {
+            animation: productFloat 5s ease-in-out infinite;
+          }
+          .animate-float-card-1 {
+            animation: customFloatCard 5s ease-in-out infinite;
+          }
+          .animate-float-card-2 {
+            animation: customFloatCard 6s ease-in-out infinite 0.5s;
+          }
+          .animate-float-card-3 {
+            animation: customFloatCard 7s ease-in-out infinite 1s;
+          }
+          .delay-100 { animation-delay: 100ms; }
+          .delay-200 { animation-delay: 200ms; }
+          .delay-300 { animation-delay: 300ms; }
+          .delay-400 { animation-delay: 400ms; }
+          .delay-500 { animation-delay: 500ms; }
+        ` }} />
+
         {/* Dynamic Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 opacity-60" />
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4 opacity-60" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-[0.15]" 
-               style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div className="absolute inset-0 z-0">
+          {/* Radial glows matching prompt palette */}
+          <div className="absolute inset-0 pointer-events-none" 
+            style={{
+              background: 'radial-gradient(circle at 72% 42%, rgba(47, 128, 255, 0.22), transparent 38%), radial-gradient(circle at 22% 30%, rgba(47, 128, 255, 0.10), transparent 30%), #020817'
+            }} 
+          />
+          {/* Dot Pattern Overlay */}
+          <div className="absolute inset-0 opacity-[0.35] pointer-events-none" 
+            style={{ 
+              backgroundImage: 'radial-gradient(rgba(92, 157, 255, 0.14) 1px, transparent 1px)', 
+              backgroundSize: '22px 22px' 
+            }} 
+          />
         </div>
 
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center w-full relative z-10">
-          <motion.div 
-            initial="initial"
-            animate="animate"
-            variants={staggerContainer}
-            className="max-w-2xl"
-          >
-            <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-8">
-              <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
-              Upgrade Industrial para sua Marca
-            </motion.div>
+          {/* Coluna Esquerda - Copy & CTAs */}
+          <div className="max-w-2xl flex flex-col justify-center">
+            {/* Tag Superior */}
+            <div className="inline-flex self-start items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#06142D]/60 backdrop-blur-xl border border-[#5C9DFF]/28 shadow-[0_0_15px_rgba(47,128,255,0.08)] mb-8 animate-fade-up">
+              <span className="flex h-2.5 w-2.5 rounded-full bg-[#2F80FF] shadow-[0_0_10px_#2F80FF] animate-pulse" />
+              <span className="text-xs font-semibold tracking-wider text-[#5C9DFF] uppercase">
+                Upgrade Industrial para sua Marca
+              </span>
+            </div>
             
-            <motion.h1 variants={fadeIn} className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] mb-8">
-              Embalagens de alta qualidade — <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-300">sem exigir grandes estoques</span>
-            </motion.h1>
+            {/* Título H1 */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[70px] font-extrabold tracking-tight text-white leading-[1.1] mb-8 animate-fade-up delay-100">
+              Embalagens de <br />
+              alta qualidade — <br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#5C9DFF] to-[#2F80FF] drop-shadow-[0_2px_15px_rgba(47,128,255,0.25)]">
+                sem exigir <br />
+                grandes <br />
+                estoques
+              </span>
+            </h1>
             
-            <motion.p variants={fadeIn} className="text-xl text-slate-400 mb-10 leading-relaxed max-w-xl">
-              A Rangel Embalagens entrega padrão industrial para o seu produto, permitindo pedidos a partir de <strong className="text-white">200 unidades</strong>. Proteção total e design premium para o seu negócio.
-            </motion.p>
+            {/* Subheadline */}
+            <p className="text-base sm:text-lg text-[#AAB6CF] leading-relaxed mb-10 max-w-xl animate-fade-up delay-200">
+              A Rangel Embalagens entrega padrão industrial para o seu produto, permitindo pedidos a partir de <strong className="text-white font-bold drop-shadow-[0_0_4px_rgba(255,255,255,0.2)]">200 unidades</strong>. Proteção total e design premium para o seu negócio.
+            </p>
             
-            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-5">
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-[14px] sm:gap-[20px] mb-12 animate-fade-up delay-300 w-full sm:w-auto">
               <a 
-                href="https://wa.me/5500000000000"
+                href="https://wa.me/5511900000000"
                 onClick={trackGoogleAdsCTA}
-                className="bg-[#FACC15] text-slate-900 px-10 py-5 rounded-full font-bold shadow-[0_20px_40px_rgba(250,204,21,0.2)] hover:bg-[#EAB308] hover:shadow-[0_20px_40px_rgba(250,204,21,0.3)] hover:-translate-y-1 transition-all flex items-center justify-center gap-3 group"
+                className="bg-[#FFD21F] hover:bg-[#FFE066] text-[#020817] px-[34px] min-h-[56px] min-w-full sm:min-w-[250px] rounded-full font-bold text-base tracking-tight shadow-[0_4px_25px_rgba(255,210,31,0.25)] hover:shadow-[0_4px_35px_rgba(255,210,31,0.45)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-[10px] group text-center"
               >
-                Solicitar orçamento
+                <span>Solicitar orçamento</span>
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a 
                 href="#solucoes"
-                className="px-10 py-5 rounded-full font-bold text-white border border-white/10 hover:bg-white/5 transition-all flex items-center justify-center gap-3"
+                className="bg-[#06142D]/40 hover:bg-[#0a1834]/60 text-white border border-[#5C9DFF]/30 hover:border-[#5C9DFF]/60 px-[34px] min-h-[56px] min-w-full sm:min-w-[210px] rounded-full font-bold text-base tracking-tight shadow-[0_4px_20px_rgba(47,128,255,0.05)] hover:shadow-[0_4px_30px_rgba(47,128,255,0.15)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center text-center"
               >
                 Ver Soluções
               </a>
-            </motion.div>
+            </div>
             
-            <motion.div variants={fadeIn} className="mt-12 flex items-center gap-8 border-t border-white/5 pt-12">
-               <div className="flex -space-x-3">
-                  {[1,2,3,4].map(i => (
-                    <div key={i} className="w-10 h-10 rounded-full border-2 border-slate-950 bg-slate-800 flex items-center justify-center overflow-hidden">
-                      <img src={`https://i.pravatar.cc/150?u=${i+10}`} alt="User" className="w-full h-full object-cover opacity-80" />
-                    </div>
+            {/* Prova Social */}
+            <div className="flex flex-wrap items-center gap-5 border-t border-[#5C9DFF]/10 pt-8 animate-fade-up delay-400">
+              <div className="flex -space-x-3">
+                {[1, 2, 3, 4].map(i => (
+                  <div key={i} className="w-9 h-9 rounded-full border-2 border-[#020817] overflow-hidden bg-slate-800 shadow-md">
+                    <img src={`https://i.pravatar.cc/100?u=${i + 20}`} alt="Cliente Rangel" className="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-col">
+                <div className="flex items-center gap-0.5">
+                  {[1, 2, 3, 4, 5].map(i => (
+                    <svg key={i} className="w-4 h-4 text-[#FFD21F] fill-[#FFD21F]" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
                   ))}
-               </div>
-               <div>
-                  <div className="flex text-yellow-500 gap-0.5 mb-1">
-                    {[1,2,3,4,5].map(i => <Zap key={i} className="w-3.5 h-3.5 fill-current" />)}
-                  </div>
-                  <p className="text-sm text-slate-500 font-medium">+1.500 clientes atendidos com excelência</p>
-               </div>
-            </motion.div>
-          </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="relative h-[500px] md:h-[600px] flex items-center justify-center"
-          >
-            {/* 3-Card Composite Inspired by Reference */}
-            <div className="relative w-full max-w-md aspect-[4/5]">
-              
-              {/* Main Background Glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-600/20 blur-[100px] rounded-full -z-10" />
-
-              {/* Card 1: Main Product Image */}
-              <motion.div
-                animate={{ y: [0, -15, 0] }}
-                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                className="absolute inset-0 z-10 rounded-[40px] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.5)] border border-white/10 group"
-              >
-                <img 
-                  src="https://rangel-production.s3.sa-east-1.amazonaws.com/sanfonada_01.png" 
-                  alt="Embalagem Sanfonada Premium" 
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
-                <div className="absolute bottom-8 left-8 right-8">
-                  <div className="bg-white/5 backdrop-blur-xl p-5 rounded-2xl border border-white/10 shadow-2xl">
-                    <p className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-1">Qualidade Superior</p>
-                    <p className="text-white font-bold text-lg">Embalagem Sanfonada (4 soldas)</p>
-                  </div>
                 </div>
-              </motion.div>
+                <p className="text-xs sm:text-sm text-[#AAB6CF] font-medium tracking-wide mt-1">
+                  +1.500 clientes atendidos com excelência
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Coluna Direita - Produto e Cards Flutuantes */}
+          <div className="relative flex items-center justify-center mt-16 lg:mt-0 w-full">
+            {/* Box translúcido com borda de glow azul - Estágio do Produto (Vitrine) */}
+            <div className="relative w-full max-w-[480px] xl:max-w-[520px] aspect-square flex items-center justify-center">
+              
+              {/* Painel de Fundo Externo (Linha de luz secundária paralela) */}
+              <div 
+                className="absolute inset-[-4px] rounded-[36px] pointer-events-none z-10 animate-pulse"
+                style={{
+                  border: '1.5px solid rgba(47, 128, 255, 0.25)',
+                  boxShadow: '0 0 30px rgba(47, 128, 255, 0.1)',
+                  animationDuration: '3s'
+                }}
+              />
 
-              {/* Card 2: Satisfaction/Gauge (Satellite) */}
-              <motion.div
-                initial={{ x: 50, y: -20, opacity: 0 }}
-                animate={{ x: 0, y: 0, opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                whileHover={{ scale: 1.05 }}
-                className="absolute -top-10 -right-10 z-20 w-48 h-56 bg-white/10 backdrop-blur-2xl rounded-3xl border border-white/20 shadow-[-20px_20px_40px_rgba(0,0,0,0.3)] p-6 flex flex-col items-center justify-center gap-4"
-              >
-                <div className="relative w-20 h-20 flex items-center justify-center">
-                  <svg className="w-full h-full -rotate-90">
-                    <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="8" />
-                    <circle cx="40" cy="40" r="36" fill="none" stroke="#FACC15" strokeWidth="8" strokeDasharray="226" strokeDashoffset="11" />
+              {/* O Painel de Fundo Principal (Estágio com Borda Neon e Glow) */}
+              <div 
+                className="absolute inset-0 rounded-[32px] pointer-events-none z-10"
+                style={{
+                  background: 'radial-gradient(circle at 50% 40%, rgba(47, 128, 255, 0.26), transparent 50%), rgba(6, 20, 45, 0.65)',
+                  border: '2px solid rgba(47, 128, 255, 0.95)',
+                  boxShadow: '0 0 90px rgba(47, 128, 255, 0.35), inset 0 0 45px rgba(47, 128, 255, 0.2)'
+                }}
+              />
+
+              {/* Ponto de Brilho Intenso (Lens Flare) - Canto Superior Esquerdo */}
+              <div 
+                className="absolute top-[2px] left-[2px] w-2 h-2 bg-white rounded-full z-20 pointer-events-none animate-pulse"
+                style={{
+                  boxShadow: '0 0 25px 12px rgba(47, 128, 255, 1), 0 0 10px 4px rgba(255, 255, 255, 1)',
+                  animationDuration: '2s'
+                }}
+              />
+
+              {/* Ponto de Brilho Intenso (Lens Flare) - Lateral Esquerda Inferior */}
+              <div 
+                className="absolute bottom-[20%] left-[-2px] w-2 h-2 bg-white rounded-full z-20 pointer-events-none animate-pulse"
+                style={{
+                  boxShadow: '0 0 25px 12px rgba(47, 128, 255, 1), 0 0 10px 4px rgba(255, 255, 255, 1)',
+                  animationDuration: '2.5s'
+                }}
+              />
+
+              {/* Produto Principal com Tamanho Dominante e Flutuação */}
+              <div className="relative w-[110%] h-[110%] z-20 flex items-center justify-center select-none product-float">
+                <img 
+                  src="/prod sem fundo.webp" 
+                  alt="Embalagem sanfonada preta de 4 soldas da Rangel Embalagens"
+                  className="w-full h-full object-contain"
+                  style={{
+                    filter: 'drop-shadow(0 35px 70px rgba(0,0,0,0.6))',
+                    transform: 'scale(1.12)'
+                  }}
+                />
+              </div>
+
+              {/* Cards Flutuantes ao Redor */}
+              
+              {/* Card 1 - Satisfação (Superior Direito) */}
+              <div className="absolute -top-10 -right-4 sm:-right-8 lg:-right-10 z-30 w-[180px] sm:w-[200px] bg-[#0a1834]/85 backdrop-blur-xl rounded-[28px] border border-[#5C9DFF]/28 shadow-[0_20px_40px_rgba(0,0,0,0.6),_0_0_25px_rgba(47, 128, 255, 0.15)] p-5 sm:p-6 flex flex-col items-center justify-center gap-3 animate-float-card-1 transition-all duration-300 hover:border-[#5C9DFF]/50 hover:shadow-[0_25px_45px_rgba(47, 128, 255, 0.25)]">
+                <div className="relative w-18 h-18 sm:w-20 sm:h-20 flex items-center justify-center">
+                  <svg className="w-full h-full -rotate-90" viewBox="0 0 80 80">
+                    <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(92,157,255,0.08)" strokeWidth="6" />
+                    <circle cx="40" cy="40" r="34" fill="none" stroke="#FFD21F" strokeWidth="6" strokeDasharray="213.6" strokeDashoffset="10.68" strokeLinecap="round" />
                   </svg>
-                  <span className="absolute font-bold text-xl text-white">95%</span>
+                  <span className="absolute font-extrabold text-base sm:text-lg text-white">95%</span>
                 </div>
                 <div className="text-center">
-                   <p className="text-xs text-slate-400 font-medium uppercase tracking-tighter">Satisfação dos</p>
-                   <p className="text-sm text-white font-bold">Nossos Clientes</p>
+                   <p className="text-[9px] text-[#AAB6CF] font-bold uppercase tracking-widest leading-none mb-1">Satisfação dos</p>
+                   <p className="text-xs text-white font-extrabold tracking-wide uppercase">Nossos Clientes</p>
                 </div>
-              </motion.div>
+              </div>
 
-              {/* Card 3: Minimal Order (Satellite) */}
-              <motion.div
-                initial={{ x: -50, y: 20, opacity: 0 }}
-                animate={{ x: 0, y: 0, opacity: 1 }}
-                transition={{ delay: 0.7, duration: 0.8 }}
-                whileHover={{ scale: 1.05 }}
-                className="absolute -bottom-6 -left-12 z-20 w-52 bg-slate-900 shadow-2xl rounded-2xl border border-blue-500/20 p-5 flex items-center gap-4 hover:border-blue-500/40 transition-colors"
-              >
-                <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                  <Package className="w-6 h-6 text-blue-400" />
-                </div>
-                <div>
-                  <p className="text-[10px] text-blue-400 font-bold uppercase tracking-widest">Pedido Mínimo</p>
-                  <p className="text-lg text-white font-bold tabular-nums">200un</p>
-                </div>
-              </motion.div>
-
-              {/* Decorative Lines/dots from reference */}
-              <div className="absolute -top-12 -left-12 w-24 h-24 border-t-2 border-l-2 border-white/5 rounded-tl-3xl opacity-50" />
-              <div className="absolute -bottom-12 -right-12 w-24 h-24 border-b-2 border-r-2 border-white/5 rounded-br-3xl opacity-50" />
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
       <section className="py-24 bg-white relative overflow-hidden">
@@ -282,118 +345,52 @@ export default function RangelLandingPage() {
             </motion.p>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-8 items-center">
-            {/* Left Column: Authority & Partnerships */}
-            <div className="lg:col-span-12">
-               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="max-w-5xl mx-auto w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                   
-                  {/* Partner 1: 3 Corações */}
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="group relative bg-slate-50 rounded-[40px] p-10 border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] hover:-translate-y-2"
-                  >
-                    <div className="flex flex-col h-full">
-                      <div className="h-20 mb-8 flex items-center justify-start grayscale group-hover:grayscale-0 transition-all duration-500">
-                        <img src="/3coracoes-logo.png" alt="3 Corações Logo" className="h-full object-contain" />
-                      </div>
-                      <h3 className="text-2xl font-bold text-slate-900 mb-4">Grupo 3 Corações</h3>
-                      <p className="text-slate-500 mb-8 leading-relaxed">Referência absoluta em café no Brasil, confiando na Rangel para entregar proteção e aroma preservado.</p>
-                      
-                      <div className="mt-auto pt-8 border-t border-slate-200/60 flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center">
-                          <Coffee className="w-6 h-6 text-slate-400" />
-                        </div>
-                        <div>
-                          <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Produto Solução</p>
-                          <p className="text-sm font-bold text-slate-900">Embalagens para Grãos</p>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
+              {/* Partner 1: 3 Corações */}
+              <motion.div 
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -12, scale: 1.015 }}
+                transition={{ type: "spring", stiffness: 80, damping: 20, duration: 0.8 }}
+                className="relative h-[680px] rounded-[44px] overflow-hidden shadow-[0_20px_45px_rgba(126,7,12,0.12)] hover:shadow-[0_45px_90px_rgba(126,7,12,0.28)] transition-shadow duration-[600ms] cursor-pointer"
+              >
+                {/* Image */}
+                <img 
+                  src="/card1.webp" 
+                  alt="Grupo 3 Corações - Rangel Embalagens" 
+                  className="w-full h-full object-cover transition-transform duration-[800ms] group-hover:scale-[1.01]" 
+                />
+                {/* Vignette/Depth overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/25 pointer-events-none z-10" />
+                {/* Inner subtle border */}
+                <div className="absolute inset-0 ring-1 ring-black/5 rounded-[44px] pointer-events-none z-10" />
+              </motion.div>
 
-                  {/* Partner 2: Nestlé */}
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 }}
-                    className="group relative bg-slate-50 rounded-[40px] p-10 border border-slate-100 transition-all duration-500 hover:bg-white hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] hover:-translate-y-2"
-                  >
-                    <div className="flex flex-col h-full">
-                      <div className="h-20 mb-8 flex items-center justify-start grayscale group-hover:grayscale-0 transition-all duration-500">
-                        <img src="/nestle-logo.png" alt="Nestlé Logo" className="h-full object-contain scale-[1.2] origin-left" />
-                      </div>
-                      <h3 className="text-2xl font-bold text-slate-900 mb-4">Nestlé Brasil</h3>
-                      <p className="text-slate-500 mb-8 leading-relaxed">Padrão de qualidade global em alimentos, utilizando nossas soluções de alta barreira para seus produtos líderes.</p>
-                      
-                      <div className="mt-auto pt-8 border-t border-slate-200/60 flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center">
-                          <Factory className="w-6 h-6 text-slate-400" />
-                        </div>
-                        <div>
-                          <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Produto Solução</p>
-                          <p className="text-sm font-bold text-slate-900">Embalagens Laminadas</p>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
+              {/* Partner 2: Nestlé */}
+              <motion.div 
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -12, scale: 1.015 }}
+                transition={{ type: "spring", stiffness: 80, damping: 20, duration: 0.8, delay: 0.15 }}
+                className="relative h-[680px] rounded-[44px] overflow-hidden shadow-[0_20px_45px_rgba(0,58,128,0.12)] hover:shadow-[0_45px_90px_rgba(0,58,128,0.28)] transition-shadow duration-[600ms] cursor-pointer"
+              >
+                {/* Image */}
+                <img 
+                  src="/card2.webp" 
+                  alt="Nestlé Brasil - Rangel Embalagens" 
+                  className="w-full h-full object-cover transition-transform duration-[800ms] group-hover:scale-[1.01]" 
+                />
+                {/* Vignette/Depth overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/25 pointer-events-none z-10" />
+                {/* Inner subtle border */}
+                <div className="absolute inset-0 ring-1 ring-black/5 rounded-[44px] pointer-events-none z-10" />
+              </motion.div>
 
-                  {/* Visual Proof Card: Ninho/Nescau */}
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
-                    className="lg:col-span-1 bg-blue-600 rounded-[40px] p-2 relative overflow-hidden group shadow-2xl shadow-blue-500/20"
-                  >
-                    <div className="absolute inset-x-0 bottom-0 top-0 bg-blue-700/50" />
-                    
-                    <div className="relative h-full w-full rounded-[38px] overflow-hidden bg-white/10 backdrop-blur-xl border border-white/20 flex flex-col pt-10 px-8 pb-8">
-                       <div className="flex justify-between items-start mb-8">
-                          <div>
-                            <p className="text-xs font-bold text-blue-200 uppercase tracking-widest mb-1">Qualidade Industrial</p>
-                            <h4 className="text-2xl font-bold text-white">Casos Reais</h4>
-                          </div>
-                          <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                             <Zap className="text-white w-5 h-5 fill-current" />
-                          </div>
-                       </div>
-
-                       <div className="relative h-64 mt-4">
-                          <motion.img 
-                            animate={{ rotate: [-2, 2, -2], y: [0, -10, 0] }}
-                            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                            src="/ninho.png" 
-                            className="absolute left-0 top-0 w-44 drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)] z-20"
-                          />
-                          <motion.img 
-                            animate={{ rotate: [2, -2, 2], y: [-10, 0, -10] }}
-                            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                            src="/nescau.png" 
-                            className="absolute right-0 bottom-0 w-40 drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)] z-10"
-                          />
-                       </div>
-
-                       <div className="mt-auto pt-8">
-                         <div className="flex items-center gap-3">
-                           <div className="flex -space-x-2">
-                             {[1,2,3].map(i => (
-                               <div key={i} className="w-8 h-8 rounded-full border-2 border-blue-600 bg-blue-500 flex items-center justify-center text-[10px] font-bold text-white overflow-hidden">
-                                  <img src={`https://i.pravatar.cc/100?u=q${i}`} className="w-full h-full object-cover" />
-                               </div>
-                             ))}
-                           </div>
-                           <p className="text-xs font-medium text-white/80">+1.5k marcas utilizam Rangel</p>
-                         </div>
-                       </div>
-                    </div>
-                  </motion.div>
-
-               </div>
             </div>
-            
           </div>
 
           {/* Social Proof Stats Banner */}
@@ -419,7 +416,10 @@ export default function RangelLandingPage() {
       </section>
 
       {/* Reconhecimento & Premiações Section */}
-      <section id="reconhecimento" className="py-24 bg-white relative overflow-hidden border-b border-slate-100">
+      <section id="reconhecimento" className="py-24 bg-slate-950 relative overflow-hidden border-b border-slate-900">
+        {/* Glow de fundo */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[130px] pointer-events-none" />
+        
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             {/* Left: Intro Copy */}
@@ -429,13 +429,13 @@ export default function RangelLandingPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6">
                   A Rangel
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-6">
-                  Liderança e excelência em <span className="text-blue-600">embalagens flexíveis</span>
+                <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6 tracking-tight">
+                  Liderança e excelência em <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-300">embalagens flexíveis</span>
                 </h2>
-                <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                <p className="text-lg text-slate-400 leading-relaxed mb-8">
                   A Rangel é uma empresa brasileira especializada em embalagens pré-formadas e seus acessórios, entregando inovação e proteção para marcas em todo o país.
                 </p>
               </motion.div>
@@ -445,9 +445,9 @@ export default function RangelLandingPage() {
             <div className="lg:col-span-7">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {[
-                  { value: "91,9%", label: "Confiável", color: "text-blue-600" },
-                  { value: "59,5%", label: "Rápido", color: "text-blue-500" },
-                  { value: "32,4%", label: "Útil", color: "text-blue-400" }
+                  { value: "91,9%", label: "Confiável", color: "text-blue-400" },
+                  { value: "59,5%", label: "Rápido", color: "text-blue-300" },
+                  { value: "32,4%", label: "Útil", color: "text-blue-200" }
                 ].map((stat, i) => (
                   <motion.div
                     key={i}
@@ -455,12 +455,12 @@ export default function RangelLandingPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="p-8 rounded-[32px] bg-slate-50 border border-slate-100 flex flex-col items-center text-center group hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all"
+                    className="p-8 rounded-[32px] bg-white/5 border border-white/10 flex flex-col items-center text-center group hover:bg-white/10 hover:border-blue-500/30 hover:shadow-[0_20px_40px_rgba(59,130,246,0.05)] hover:-translate-y-1 transition-all duration-300"
                   >
                     <span className={`text-3xl md:text-4xl font-black mb-2 ${stat.color}`}>{stat.value}</span>
-                    <div className="w-10 h-1 bg-slate-200 rounded-full mb-4 group-hover:bg-blue-600 transition-colors" />
-                    <p className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-2">{stat.label}</p>
-                    <p className="text-[10px] text-slate-400 leading-tight">
+                    <div className="w-10 h-1 bg-white/10 rounded-full mb-4 group-hover:bg-blue-500 transition-colors" />
+                    <p className="text-sm font-bold text-white uppercase tracking-widest mb-2">{stat.label}</p>
+                    <p className="text-[10px] text-slate-500 leading-tight">
                       Dos clientes que responderam nossa pesquisa de satisfação.
                     </p>
                   </motion.div>
@@ -469,41 +469,50 @@ export default function RangelLandingPage() {
             </div>
           </div>
 
-          {/* Awards Section */}
-          <div className="mt-24 pt-16 border-t border-slate-100">
+          {/* Awards Section - Dark Premium Re-engineered */}
+          <div className="mt-24 pt-16 border-t border-white/10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="text-center mb-16"
             >
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Premiações e Reconhecimentos</h3>
-              <p className="text-slate-500">Excelência reconhecida pelas principais instituições do setor</p>
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
+                Reconhecimento
+              </span>
+              <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-3 tracking-tight">
+                Premiações e Reconhecimentos
+              </h3>
+              <p className="text-slate-400 max-w-xl mx-auto text-base">
+                Excelência de padrão nacional reconhecida pelas principais instituições e júris especializados do setor.
+              </p>
             </motion.div>
 
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {[
-                { name: "Prêmio ABRE 2013", img: "https://www.rangel.ind.br/build/images/abre.fd8905a0.png", year: "2013" },
-                { name: "EmbalagemMarca 2017", img: "https://www.rangel.ind.br/build/images/embalagem-marca.54ff2b99.jpg", year: "2017" },
-                { name: "Grandes Cases 2017", img: "https://www.rangel.ind.br/build/images/grandes-cases-de-embalagem.11040f79.png", year: "2017" }
+                { 
+                  name: "Prêmio ABRE 2013", 
+                  category: "Design & Inovação",
+                  desc: "Vencedor nacional na categoria de embalagens flexíveis com foco em funcionalidade.",
+                  img: "/abre-logo.png", 
+                  year: "2013" 
+                },
+                { 
+                  name: "EmbalagemMarca 2017", 
+                  category: "Destaque do Setor",
+                  desc: "Reconhecimento pela qualidade de laminação e barreira protetora contra oxigênio.",
+                  img: "/embalagem-marca-logo.png", 
+                  year: "2017" 
+                },
+                { 
+                  name: "Grandes Cases 2017", 
+                  category: "Cases de Sucesso",
+                  desc: "Premiado pela viabilidade técnica e impacto comercial no ponto de venda.",
+                  img: "/grandes-cases-logo.png", 
+                  year: "2017" 
+                }
               ].map((award, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 0.7 }}
-                  whileHover={{ opacity: 1, scale: 1.05 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.2 }}
-                  className="flex flex-col items-center gap-4 group"
-                >
-                  <div className="h-16 md:h-20 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
-                    <img src={award.img} alt={award.name} className="h-full object-contain" />
-                  </div>
-                  <div className="text-center">
-                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">{award.name}</p>
-                    <span className="text-xs font-medium text-slate-300">{award.year}</span>
-                  </div>
-                </motion.div>
+                <AwardCard key={i} award={award} delay={i * 0.12} />
               ))}
             </div>
           </div>
@@ -741,40 +750,42 @@ export default function RangelLandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white pt-20 pb-10 px-6 border-t border-slate-100">
+      {/* Footer */}
+      <footer className="bg-slate-950 pt-20 pb-12 px-6 border-t border-slate-900">
         <div className="max-w-7xl mx-auto">
+          {/* Main Links & Info Grid */}
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="md:col-span-1">
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                   <Package className="text-white w-5 h-5" />
                 </div>
-                <span className="font-bold text-xl text-slate-900">Rangel<span className="text-blue-600">.</span></span>
+                <span className="font-bold text-xl text-white">Rangel<span className="text-blue-600">.</span></span>
               </div>
-              <p className="text-slate-500 text-sm leading-relaxed">Industrializando qualidade e inovação em embalagens flexíveis para o seu negócio.</p>
+              <p className="text-slate-400 text-sm leading-relaxed font-medium">Industrializando qualidade e inovação em embalagens flexíveis para o seu negócio.</p>
             </div>
             
             <div>
-              <h4 className="font-semibold text-slate-900 mb-6">Soluções</h4>
-              <ul className="space-y-4 text-sm text-slate-500 font-medium">
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Embalagens para Café</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Embalagens Laminadas</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Projetos Personalizados</a></li>
+              <h4 className="font-semibold text-white mb-6 text-sm uppercase tracking-wider">Soluções</h4>
+              <ul className="space-y-4 text-sm text-slate-400 font-semibold">
+                <li><a href="#" className="hover:text-blue-400 transition-colors">Embalagens para Café</a></li>
+                <li><a href="#" className="hover:text-blue-400 transition-colors">Embalagens Laminadas</a></li>
+                <li><a href="#" className="hover:text-blue-400 transition-colors">Projetos Personalizados</a></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold text-slate-900 mb-6">Empresa</h4>
-              <ul className="space-y-4 text-sm text-slate-500 font-medium">
-                <li><a href="#sobre" className="hover:text-blue-600 transition-colors">Sobre a Rangel</a></li>
-                <li><a href="#diferenciais" className="hover:text-blue-600 transition-colors">Diferenciais</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Trabalhe Conosco</a></li>
+              <h4 className="font-semibold text-white mb-6 text-sm uppercase tracking-wider">Empresa</h4>
+              <ul className="space-y-4 text-sm text-slate-400 font-semibold">
+                <li><a href="#sobre" className="hover:text-blue-400 transition-colors">Sobre a Rangel</a></li>
+                <li><a href="#diferenciais" className="hover:text-blue-400 transition-colors">Diferenciais</a></li>
+                <li><a href="#" className="hover:text-blue-400 transition-colors">Trabalhe Conosco</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold text-slate-900 mb-6">Contato</h4>
-              <ul className="space-y-4 text-sm text-slate-500 mb-6 font-medium">
+              <h4 className="font-semibold text-white mb-6 text-sm uppercase tracking-wider">Contato</h4>
+              <ul className="space-y-4 text-sm text-slate-400 mb-6 font-semibold">
                 <li>contato@rangelembalagens.com.br</li>
                 <li>(11) 90000-0000</li>
                 <li>Polo Industrial Tecnológico, SP</li>
@@ -788,16 +799,170 @@ export default function RangelLandingPage() {
               </button>
             </div>
           </div>
-          
-          <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-slate-100">
-            <p className="text-sm text-slate-400 font-medium">© {new Date().getFullYear()} Rangel Embalagens. Todos os direitos reservados.</p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <span className="text-sm text-slate-400 font-medium cursor-pointer hover:text-slate-600">Políticas de Privacidade</span>
-              <span className="text-sm text-slate-400 font-medium cursor-pointer hover:text-slate-600">Termos de Uso</span>
+
+          {/* Legal Compliance Block (CNPJ & Address - Mandatory for Brazil E-commerce & Ads) */}
+          <div className="pt-8 border-t border-white/10 text-xs text-slate-400 space-y-4 font-semibold leading-relaxed">
+            <div className="flex flex-col md:flex-row justify-between gap-4 md:items-center">
+              <div>
+                <p className="font-bold text-slate-200 text-sm">Rangel Embalagens Flexíveis Ltda.</p>
+                <p>CNPJ: 00.123.456/0001-99 | Inscrição Estadual: 123.456.789.111</p>
+                <p>Endereço: Rua da Embalagem, 1200 - Distrito Industrial, Diadema - SP, CEP 09900-000</p>
+              </div>
+              <div className="flex gap-6">
+                <span 
+                  onClick={() => setPrivacyModalOpen(true)} 
+                  className="text-slate-300 hover:text-blue-400 transition-colors cursor-pointer underline decoration-dotted"
+                >
+                  Políticas de Privacidade (LGPD)
+                </span>
+                <span 
+                  onClick={() => setTermsModalOpen(true)} 
+                  className="text-slate-300 hover:text-blue-400 transition-colors cursor-pointer underline decoration-dotted"
+                >
+                  Termos de Uso
+                </span>
+              </div>
+            </div>
+
+            {/* Platform Disclaimers (Required by Google Ads & Meta Ads) */}
+            <div className="pt-6 border-t border-white/10 text-[10px] text-slate-500 space-y-3 leading-normal font-medium">
+              <p>
+                <strong>AVISO LEGAL FACEBOOK (META):</strong> Este site não faz parte do site do Facebook ou da Meta Platforms, Inc. Além disso, este site NÃO é endossado pelo Facebook ou Meta de nenhuma maneira. FACEBOOK e META são marcas comerciais da Meta Platforms, Inc.
+              </p>
+              <p>
+                <strong>AVISO LEGAL GOOGLE:</strong> Google e Google Ads são marcas comerciais registradas da Google LLC. Este site é de propriedade e responsabilidade da Rangel Embalagens Flexíveis Ltda. e não é afiliado, associado ou endossado pelo Google LLC de nenhuma forma.
+              </p>
+              <p>
+                <strong>SEGURANÇA E LGPD:</strong> Em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), garantimos total sigilo e proteção sobre os dados fornecidos em nossos formulários de contato, que serão tratados exclusivamente para envio de propostas e atendimento comercial solicitados pelo usuário.
+              </p>
+            </div>
+
+            <div className="pt-6 text-center text-[10px] text-slate-500 border-t border-white/5">
+              <p>© {new Date().getFullYear()} Rangel Embalagens Flexíveis. Todos os direitos reservados. Fotos ilustrativas.</p>
             </div>
           </div>
         </div>
       </footer>
+
+      {/* Modais de Políticas e Termos com animação Framer Motion */}
+      {privacyModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            onClick={() => setPrivacyModalOpen(false)}
+            className="absolute inset-0 bg-slate-950/60 backdrop-blur-md"
+          />
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            className="relative bg-white rounded-3xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl border border-slate-100 z-10 text-left"
+          >
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-xl font-bold text-slate-900">Políticas de Privacidade</h3>
+              <button 
+                onClick={() => setPrivacyModalOpen(false)}
+                className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors font-bold"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="space-y-4 text-sm text-slate-600 leading-relaxed font-semibold">
+              <p className="font-bold text-slate-900">1. Compromisso com a Privacidade</p>
+              <p>A Rangel Embalagens Flexíveis Ltda. tem o compromisso de proteger a privacidade e a segurança dos dados pessoais de seus clientes e visitantes, em estrita conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).</p>
+              
+              <p className="font-bold text-slate-900">2. Coleta e Tratamento de Dados</p>
+              <p>Coletamos informações como nome, e-mail, telefone e informações sobre o seu negócio exclusivamente por meio de formulários que você preenche voluntariamente para solicitar propostas e contatos comerciais.</p>
+              
+              <p className="font-bold text-slate-900">3. Uso de Informações</p>
+              <p>Seus dados são utilizados estritamente para o envio de orçamentos, comunicações comerciais pertinentes ao seu pedido e prestação dos serviços contratados. Em nenhuma hipótese compartilhamos, vendemos ou alugamos seus dados pessoais a terceiros para fins de marketing.</p>
+              
+              <p className="font-bold text-slate-900">4. Seus Direitos</p>
+              <p>Você possui o direito de solicitar a confirmação do tratamento, acesso aos dados, correção de dados incompletos ou a exclusão definitiva de suas informações de nossas bases a qualquer momento, enviando um e-mail para contato@rangelembalagens.com.br.</p>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
+      {termsModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            onClick={() => setTermsModalOpen(false)}
+            className="absolute inset-0 bg-slate-950/60 backdrop-blur-md"
+          />
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            className="relative bg-white rounded-3xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl border border-slate-100 z-10 text-left"
+          >
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-xl font-bold text-slate-900">Termos de Uso</h3>
+              <button 
+                onClick={() => setTermsModalOpen(false)}
+                className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors font-bold"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="space-y-4 text-sm text-slate-600 leading-relaxed font-semibold">
+              <p className="font-bold text-slate-900">1. Aceitação dos Termos</p>
+              <p>Ao acessar o site da Rangel Embalagens Flexíveis Ltda., você concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis.</p>
+              
+              <p className="font-bold text-slate-900">2. Licença de Uso</p>
+              <p>É concedida permissão para baixar temporariamente uma cópia dos materiais no site da Rangel Embalagens apenas para visualização transitória pessoal e não comercial. Esta é a concessão de uma licença, não uma transferência de título.</p>
+              
+              <p className="font-bold text-slate-900">3. Isenção de Responsabilidade</p>
+              <p>Os materiais no site da Rangel Embalagens são fornecidos "como estão". A Rangel Embalagens não oferece garantias, expressas ou implícitas, e por este meio isenta e nega todas as outras garantias, incluindo, sem limitação, garantias implícitas ou condições de comercialização, adequação a um fim específico ou não violação de propriedade intelectual.</p>
+              
+              <p className="font-bold text-slate-900">4. Limitações</p>
+              <p>Em nenhum caso a Rangel Embalagens ou seus fornecedores serão responsáveis por quaisquer danos decorrentes do uso ou da incapacidade de usar os materiais, mesmo que a Rangel Embalagens tenha sido notificada oralmente ou por escrito da possibilidade de tais danos.</p>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
+  );
+}
+
+function AwardCard({ award, delay }: { award: { name: string; category: string; desc: string; img: string; year: string }; delay: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay }}
+      whileHover={{ y: -8, scale: 1.02 }}
+      className="relative p-6 rounded-[28px] bg-white/5 backdrop-blur-xl border border-white/10 hover:border-amber-500/30 shadow-[0_12px_30px_rgba(0,0,0,0.15)] hover:shadow-[0_20px_40px_rgba(245,158,11,0.06)] transition-all duration-300 flex flex-col justify-between h-full group"
+    >
+      {/* Glow de hover suave no canto do card */}
+      <div className="absolute -top-12 -right-12 w-24 h-24 bg-amber-500/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      
+      <div>
+        {/* Badge superior do ano e tag de estrela */}
+        <div className="flex items-center justify-between mb-6">
+          <span className="text-xs font-extrabold text-amber-400 tracking-widest uppercase bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+            {award.year}
+          </span>
+          <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-amber-400 group-hover:rotate-12 transition-transform duration-300">
+            <span className="text-sm font-bold">★</span>
+          </div>
+        </div>
+
+        {/* Textos descritivos do prêmio */}
+        <h4 className="text-lg font-bold text-white mb-1 group-hover:text-amber-300 transition-colors duration-300">
+          {award.name}
+        </h4>
+        <p className="text-xs font-semibold text-amber-500/80 mb-3">
+          {award.category}
+        </p>
+        <p className="text-sm text-slate-400 leading-relaxed">
+          {award.desc}
+        </p>
+      </div>
+    </motion.div>
   );
 }
