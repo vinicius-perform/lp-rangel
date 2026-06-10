@@ -811,8 +811,8 @@ export default function RangelLandingPage() {
               <h4 className="font-semibold text-white mb-6 text-sm uppercase tracking-wider">Contato</h4>
               <ul className="space-y-4 text-sm text-slate-400 mb-6 font-semibold">
                 <li>contato@rangelembalagens.com.br</li>
-                <li>(11) 90000-0000</li>
-                <li>Polo Industrial Tecnológico, SP</li>
+                <li>(11) 3346-6666</li>
+                <li>Parque da Moóca, São Paulo/SP</li>
               </ul>
               <button className="inline-flex items-center gap-2 text-xs font-bold text-green-700 bg-green-50 px-3 py-1.5 rounded-full border border-green-200">
                 <span className="relative flex h-2 w-2">
@@ -828,9 +828,9 @@ export default function RangelLandingPage() {
           <div className="pt-8 border-t border-white/10 text-xs text-slate-400 space-y-4 font-semibold leading-relaxed">
             <div className="flex flex-col md:flex-row justify-between gap-4 md:items-center">
               <div>
-                <p className="font-bold text-slate-200 text-sm">Rangel Embalagens Flexíveis Ltda.</p>
-                <p>CNPJ: 00.123.456/0001-99 | Inscrição Estadual: 123.456.789.111</p>
-                <p>Endereço: Rua da Embalagem, 1200 - Distrito Industrial, Diadema - SP, CEP 09900-000</p>
+                <p className="font-bold text-slate-200 text-sm">RANGEL INDUSTRIA E COMERCIO LTDA</p>
+                <p>C.N.P.J. 66.037.045/0001-49 | I.E.: 113.993.858.110</p>
+                <p>Endereço: Av. Henry Ford, 2380/2400 - Parque da Moóca - São Paulo/SP - CEP: 03109-001</p>
               </div>
               <div className="flex gap-6">
                 <span 
@@ -854,7 +854,7 @@ export default function RangelLandingPage() {
                 <strong>AVISO LEGAL FACEBOOK (META):</strong> Este site não faz parte do site do Facebook ou da Meta Platforms, Inc. Além disso, este site NÃO é endossado pelo Facebook ou Meta de nenhuma maneira. FACEBOOK e META são marcas comerciais da Meta Platforms, Inc.
               </p>
               <p>
-                <strong>AVISO LEGAL GOOGLE:</strong> Google e Google Ads são marcas comerciais registradas da Google LLC. Este site é de propriedade e responsabilidade da Rangel Embalagens Flexíveis Ltda. e não é afiliado, associado ou endossado pelo Google LLC de nenhuma forma.
+                <strong>AVISO LEGAL GOOGLE:</strong> Google e Google Ads são marcas comerciais registradas da Google LLC. Este site é de propriedade e responsabilidade da RANGEL INDUSTRIA E COMERCIO LTDA e não é afiliado, associado ou endossado pelo Google LLC de nenhuma forma.
               </p>
               <p>
                 <strong>SEGURANÇA E LGPD:</strong> Em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), garantimos total sigilo e proteção sobre os dados fornecidos em nossos formulários de contato, que serão tratados exclusivamente para envio de propostas e atendimento comercial solicitados pelo usuário.
@@ -862,7 +862,7 @@ export default function RangelLandingPage() {
             </div>
 
             <div className="pt-6 text-center text-[10px] text-slate-500 border-t border-white/5">
-              <p>© {new Date().getFullYear()} Rangel Embalagens Flexíveis. Todos os direitos reservados. Fotos ilustrativas.</p>
+              <p>© {new Date().getFullYear()} RANGEL INDUSTRIA E COMERCIO LTDA. Todos os direitos reservados. Fotos ilustrativas.</p>
             </div>
           </div>
         </div>
