@@ -30,6 +30,12 @@ const staggerContainer = {
   }
 };
 
+const WhatsAppIcon = ({ className = "w-6 h-6" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.497 1.45 5.416 1.451 5.38 0 9.755-4.378 9.759-9.759.002-2.607-1.011-5.059-2.855-6.905C17.079 2.097 14.632.822 12.002.822c-5.38 0-9.759 4.378-9.764 9.76-.001 1.91.503 3.775 1.464 5.378L2.716 21.282l5.931-1.554zm11.006-7.391c-.302-.15-1.788-.882-2.057-.982-.269-.099-.465-.149-.662.15-.196.299-.762.982-.934 1.18-.172.199-.344.224-.646.074-.3-.15-1.269-.467-2.417-1.492-.893-.797-1.497-1.783-1.672-2.083-.176-.3-.018-.462.132-.61.135-.133.302-.35.453-.524.151-.174.2-.299.302-.498.101-.199.05-.374-.025-.524-.075-.15-.662-1.6-.906-2.185-.238-.57-.479-.492-.662-.501-.172-.008-.368-.01-.564-.01-.196 0-.515.074-.784.374-.269.299-1.03.1-1.03 2.508 0 2.409 1.751 4.73 1.996 5.06.246.33 3.447 5.263 8.351 7.388 1.166.505 2.078.807 2.785 1.031 1.17.372 2.238.319 3.082.193.94-.14 1.926-.788 2.198-1.513.272-.725.272-1.346.191-1.47-.081-.125-.298-.199-.6-.349z" />
+  </svg>
+);
+
 export default function RangelLandingPage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -67,7 +73,7 @@ export default function RangelLandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans selection:bg-blue-600 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans selection:bg-blue-600 selection:text-white overflow-x-hidden relative">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/50 shadow-[0_2px_15px_rgba(0,0,0,0.03)] transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -166,7 +172,7 @@ export default function RangelLandingPage() {
             <div className="inline-flex self-start items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#06142D]/60 backdrop-blur-xl border border-[#5C9DFF]/28 shadow-[0_0_15px_rgba(47,128,255,0.08)] mb-8 animate-fade-up">
               <span className="flex h-2.5 w-2.5 rounded-full bg-[#2F80FF] shadow-[0_0_10px_#2F80FF] animate-pulse" />
               <span className="text-xs font-semibold tracking-wider text-[#5C9DFF] uppercase">
-                Upgrade Industrial para sua Marca
+                Pequenas quantidades, Com grande qualidade.
               </span>
             </div>
             
@@ -274,8 +280,8 @@ export default function RangelLandingPage() {
               {/* Produto Principal com Tamanho Dominante e Flutuação */}
               <div className="relative w-[110%] h-[110%] z-20 flex items-center justify-center select-none product-float">
                 <img 
-                  src="/prod sem fundo.webp" 
-                  alt="Embalagem sanfonada preta de 4 soldas da Rangel Embalagens"
+                  src="/embalagem sanfonada.png" 
+                  alt="Embalagens sanfonadas pretas da Rangel Embalagens"
                   className="w-full h-full object-contain"
                   style={{
                     filter: 'drop-shadow(0 35px 70px rgba(0,0,0,0.6))',
@@ -305,6 +311,7 @@ export default function RangelLandingPage() {
           </div>
         </div>
       </section>
+      
       <section className="py-24 bg-white relative overflow-hidden">
         {/* Decorative background elements */}
         <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0)', backgroundSize: '40px 40px' }} />
@@ -585,6 +592,24 @@ export default function RangelLandingPage() {
               </motion.div>
             ))}
           </div>
+
+          {/* Botão de solicitar orçamento igual ao do Hero */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="flex justify-center mt-12"
+          >
+            <a 
+              href="https://wa.me/5511900000000"
+              onClick={trackGoogleAdsCTA}
+              className="bg-[#FFD21F] hover:bg-[#FFE066] text-[#020817] px-[34px] min-h-[56px] rounded-full font-bold text-base tracking-tight shadow-[0_4px_25px_rgba(255,210,31,0.25)] hover:shadow-[0_4px_35px_rgba(255,210,31,0.45)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-[10px] group text-center"
+            >
+              <span>Solicitar orçamento</span>
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </motion.div>
         </div>
       </section>
 
@@ -731,8 +756,8 @@ export default function RangelLandingPage() {
             
             <div className="relative z-10 max-w-2xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">Seu produto merece uma embalagem de qualidade — sem exigir grandes quantidades</h2>
-              <p className="text-blue-100 text-lg mb-10 leading-relaxed">
-                Solicite um orçamento e descubra como a Rangel pode atender o seu negócio com qualidade e flexibilidade.
+              <p className="text-blue-100 text-lg mb-10 leading-relaxed font-medium">
+                Pequenas quantidades, Com grande qualidade. Solicite um orçamento e descubra como a Rangel pode atender o seu negócio com qualidade e flexibilidade.
               </p>
               
               <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -750,8 +775,7 @@ export default function RangelLandingPage() {
       </section>
 
       {/* Footer */}
-      {/* Footer */}
-      <footer className="bg-slate-950 pt-20 pb-12 px-6 border-t border-slate-900">
+      <footer className="bg-slate-950 pt-20 pb-12 px-6 border-t border-slate-900 font-sans">
         <div className="max-w-7xl mx-auto">
           {/* Main Links & Info Grid */}
           <div className="grid md:grid-cols-4 gap-12 mb-16">
@@ -924,6 +948,31 @@ export default function RangelLandingPage() {
           </motion.div>
         </div>
       )}
+
+      {/* Botão Flutuante de WhatsApp */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1, type: "spring", stiffness: 260, damping: 20 }}
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-3 group"
+      >
+        {/* Tooltip elegante */}
+        <span className="bg-[#0a1834]/95 text-white text-xs font-bold py-2 px-4 rounded-full border border-emerald-500/20 shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none select-none backdrop-blur-xl">
+          Falar com Atendente
+        </span>
+        <a
+          href="https://wa.me/5511900000000"
+          onClick={trackGoogleAdsCTA}
+          className="w-14 h-14 bg-emerald-600 hover:bg-emerald-500 rounded-full flex items-center justify-center shadow-[0_8px_30px_rgba(16,185,129,0.3)] hover:shadow-[0_8px_30px_rgba(16,185,129,0.5)] hover:-translate-y-1 transition-all duration-300 text-white relative"
+        >
+          {/* Ponto de notificação pulsando para chamar atenção */}
+          <span className="absolute -top-0.5 -right-0.5 flex h-3 w-3">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+          </span>
+          <WhatsAppIcon className="w-7 h-7" />
+        </a>
+      </motion.div>
     </div>
   );
 }
