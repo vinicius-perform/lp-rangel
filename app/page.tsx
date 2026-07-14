@@ -101,7 +101,7 @@ export default function RangelLandingPage() {
             <div className="w-10 h-10 bg-[#06142D] rounded-xl flex items-center justify-center shadow-lg shadow-[#06142D]/20">
               <Package className="text-white w-5.5 h-5.5" />
             </div>
-            <span className="font-bold text-xl tracking-tight text-[#06142D]">Rangel<span className="text-[#2F80FF] font-light text-base ml-1">\soulpack</span></span>
+            <span className="font-bold text-xl tracking-tight text-[#06142D]">Rangel<span className="text-[#2F80FF]">.</span></span>
           </div>
           
           <div className="hidden md:flex items-center gap-8 font-semibold text-sm text-[#334155]">
@@ -330,32 +330,7 @@ export default function RangelLandingPage() {
               A nossa embalagem de destaque é projetada especificamente para marcas que exigem conservação impecável do produto final. Com acabamento translúcido de altíssima clareza e rigidez estrutural, ela oferece a barreira perfeita contra os elementos externos.
             </p>
 
-            <div className="space-y-4 mb-8">
-              {[
-                {
-                  title: "Selagem Hermética Avançada",
-                  desc: "Polímeros de alta fusão que evitam micro-fissuras e garantem a integridade total da selagem."
-                },
-                {
-                  title: "Barreira Isoladora Multipropósito",
-                  desc: "Proteção total contra oxigênio, umidade, gordura e odores para manter a frescura original."
-                },
-                {
-                  title: "Aparência Premium no PDV",
-                  desc: "Material cristalino de altíssima transparência que valoriza o produto e atrai o olhar do consumidor."
-                }
-              ].map((item, index) => (
-                <div key={index} className="flex gap-4 items-start">
-                  <div className="w-6 h-6 rounded-full bg-[#EAF2FF] border border-[#2F80FF]/15 flex items-center justify-center text-[#2F80FF] shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-[#06142D] text-sm sm:text-base">{item.title}</h4>
-                    <p className="text-xs sm:text-sm text-[#64748B] mt-0.5">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <a 
@@ -1307,7 +1282,7 @@ export default function RangelLandingPage() {
                 <div className="w-8 h-8 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
                   <Package className="text-white w-5 h-5" />
                 </div>
-                <span className="font-bold text-xl text-white">Rangel<span className="text-[#2F80FF] font-light text-base ml-1">\soulpack</span></span>
+                <span className="font-bold text-xl text-white">Rangel<span className="text-[#2F80FF]">.</span></span>
               </div>
               <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-medium">
                 Desenvolvimento e corte sob medida de embalagens flexíveis com alta barreira contra elementos e prazo recorde no mercado.
