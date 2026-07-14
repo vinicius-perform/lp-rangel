@@ -181,7 +181,7 @@ export default function RangelLandingPage() {
 
           {/* Descrição */}
           <p className="text-lg sm:text-xl text-[#64748B] leading-relaxed mb-10 max-w-2xl animate-fade-up delay-200">
-            Proteja o sabor, aroma e frescor do seu produto com tecnologia industrial de ponta. A Rangel fabrica embalagens flexíveis sob medida com entrega recorde de <strong className="text-[#06142D] font-bold">1 a 3 dias úteis</strong> e lote mínimo de <strong className="text-[#06142D] font-bold">200 unidades</strong>.
+            Proteja o sabor, aroma e frescor do seu produto com tecnologia industrial de ponta. A Rangel fabrica embalagens flexíveis com entrega recorde de <strong className="text-[#06142D] font-bold">1 a 3 dias úteis</strong> e lote mínimo de <strong className="text-[#06142D] font-bold">200 unidades</strong>.
           </p>
 
           {/* CTAs */}
