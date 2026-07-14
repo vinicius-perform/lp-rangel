@@ -101,10 +101,11 @@ export default function RangelLandingPage() {
             <div className="w-10 h-10 bg-[#06142D] rounded-xl flex items-center justify-center shadow-lg shadow-[#06142D]/20">
               <Package className="text-white w-5.5 h-5.5" />
             </div>
-            <span className="font-bold text-xl tracking-tight text-[#06142D]">Rangel<span className="text-[#2F80FF]">.</span></span>
+            <span className="font-bold text-xl tracking-tight text-[#06142D]">Rangel<span className="text-[#2F80FF] font-light text-base ml-1">\soulpack</span></span>
           </div>
           
           <div className="hidden md:flex items-center gap-8 font-semibold text-sm text-[#334155]">
+            <a href="#produto-destaque" className="hover:text-[#2563EB] transition-colors">Destaque</a>
             <a href="#solucoes" className="hover:text-[#2563EB] transition-colors">Embalagens</a>
             <a href="#alta-barreira" className="hover:text-[#2563EB] transition-colors">Alta Barreira</a>
             <a href="#diferenciais" className="hover:text-[#2563EB] transition-colors">Diferenciais</a>
@@ -128,6 +129,7 @@ export default function RangelLandingPage() {
         {/* Mobile Menu */}
         <div className={`fixed inset-0 bg-white z-40 transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden pt-24 px-6`}>
            <div className="flex flex-col gap-6 text-lg font-medium text-slate-800">
+             <a href="#produto-destaque" onClick={() => setMobileMenuOpen(false)}>Destaque</a>
              <a href="#solucoes" onClick={() => setMobileMenuOpen(false)}>Embalagens</a>
              <a href="#alta-barreira" onClick={() => setMobileMenuOpen(false)}>Alta Barreira</a>
              <a href="#diferenciais" onClick={() => setMobileMenuOpen(false)}>Diferenciais</a>
@@ -144,13 +146,13 @@ export default function RangelLandingPage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section id="hero" className="pt-32 pb-20 md:pt-40 md:pb-28 px-6 relative overflow-hidden flex items-center min-h-[92vh]">
+      {/* Hero Section - Sem imagem, focado na promessa e vantagens */}
+      <section id="hero" className="pt-32 pb-20 md:pt-40 md:pb-28 px-6 relative overflow-hidden flex items-center min-h-[90vh]">
         {/* Efeitos de Fundo Dinâmicos Corporativos */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 pointer-events-none" 
             style={{
-              background: 'radial-gradient(circle at 75% 35%, rgba(47, 128, 255, 0.08), transparent 45%), radial-gradient(circle at 25% 65%, rgba(59, 130, 246, 0.03), transparent 40%), #F8FAFC'
+              background: 'radial-gradient(circle at 50% 30%, rgba(47, 128, 255, 0.08), transparent 45%), radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.03), transparent 30%), #F8FAFC'
             }} 
           />
           {/* Grade blueprint industrial sutil */}
@@ -162,131 +164,217 @@ export default function RangelLandingPage() {
           />
         </div>
 
-        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 xl:gap-32 items-center w-full relative z-10">
-          {/* Copy Principal */}
-          <div className="max-w-2xl flex flex-col justify-center text-left">
-            <div className="inline-flex self-start items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF2FF] border border-[#2F80FF]/20 shadow-sm mb-6 animate-fade-up">
-              <span className="flex h-2 w-2 rounded-full bg-[#2F80FF] shadow-[0_0_8px_#2F80FF] animate-pulse" />
-              <span className="text-xs font-bold tracking-wider text-[#12345A] uppercase">
-                Pedidos a partir de apenas 200 unidades
-              </span>
-            </div>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-black tracking-tight text-[#020817] leading-[1.1] mb-6 animate-fade-up delay-100">
-              Embalagens a vácuo <br />
-              de <span className="text-[#2F80FF]">alta barreira</span> <br />
-              com entrega rápida
-            </h1>
-            
-            <p className="text-base sm:text-lg text-[#64748B] leading-relaxed mb-8 max-w-xl animate-fade-up delay-200">
-              Proteja o sabor, aroma e frescor do seu produto com tecnologia industrial de ponta. A Rangel fabrica embalagens flexíveis a vácuo sob medida com entrega recorde de <strong className="text-[#06142D] font-bold">1 a 3 dias úteis</strong> e lote mínimo de <strong className="text-[#06142D] font-bold">200 unidades</strong>.
-            </p>
-            
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8 animate-fade-up delay-300 w-full sm:w-auto">
-              <a 
-                href="https://wa.me/5511900000000"
-                onClick={trackGoogleAdsCTA}
-                className="bg-[#009E73] hover:bg-[#008762] text-white px-8 min-h-[56px] rounded-full font-bold text-base tracking-tight shadow-[0_8px_24px_rgba(0,158,115,0.18)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3 text-center"
-              >
-                <WhatsAppIcon className="w-5 h-5" />
-                <span>Falar com time comercial</span>
-              </a>
-              <a 
-                href="#alta-barreira"
-                className="bg-white hover:bg-slate-50 text-[#334155] border border-slate-200 px-8 min-h-[56px] rounded-full font-semibold text-base tracking-tight transition-all duration-300 flex items-center justify-center text-center shadow-sm"
-              >
-                Ver tecnologia de barreira
-              </a>
-            </div>
-
-            {/* Selos Técnicos Industriais de Apoio */}
-            <div className="grid grid-cols-3 gap-4 border-t border-slate-200 pt-8 mt-4 animate-fade-up delay-400">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-[#EAF2FF] flex items-center justify-center text-[#2F80FF] shrink-0">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <span className="text-[10px] sm:text-xs font-bold text-[#06142D] leading-tight">100% Grau Alimentício</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-[#EAF2FF] flex items-center justify-center text-[#2F80FF] shrink-0">
-                  <Factory className="w-5 h-5" />
-                </div>
-                <span className="text-[10px] sm:text-xs font-bold text-[#06142D] leading-tight">Fabricação Nacional</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-[#EAF2FF] flex items-center justify-center text-[#2F80FF] shrink-0">
-                  <Zap className="w-5 h-5" />
-                </div>
-                <span className="text-[10px] sm:text-xs font-bold text-[#06142D] leading-tight">Logística Expressa</span>
-              </div>
-            </div>
+        <div className="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center">
+          {/* Badge de Destaque */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF2FF] border border-[#2F80FF]/20 shadow-sm mb-8 animate-fade-up">
+            <span className="flex h-2 w-2 rounded-full bg-[#2F80FF] shadow-[0_0_8px_#2F80FF] animate-pulse" />
+            <span className="text-xs font-bold tracking-wider text-[#12345A] uppercase">
+              Pedidos a partir de apenas 200 unidades
+            </span>
           </div>
-          
-          {/* Coluna Direita - Mockup do Produto & Lotes Destaque (Aumentado para Preencher) */}
-          <div className="relative flex items-center justify-center mt-16 lg:mt-0 w-full px-4 sm:px-0">
-            <div className="relative w-full max-w-[340px] min-[375px]:max-w-[390px] sm:max-w-[480px] md:max-w-[520px] aspect-square flex items-center justify-center">
-              
-              {/* Painel Central com Brilho Azul Claro Sutil */}
+
+          {/* Promessa Principal */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#020817] leading-[1.1] mb-6 max-w-4xl animate-fade-up delay-100">
+            Embalagens de <br className="hidden sm:inline" />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#2F80FF] to-[#1d4ed8]">alta barreira</span> com entrega rápida
+          </h1>
+
+          {/* Descrição */}
+          <p className="text-lg sm:text-xl text-[#64748B] leading-relaxed mb-10 max-w-2xl animate-fade-up delay-200">
+            Proteja o sabor, aroma e frescor do seu produto com tecnologia industrial de ponta. A Rangel fabrica embalagens flexíveis sob medida com entrega recorde de <strong className="text-[#06142D] font-bold">1 a 3 dias úteis</strong> e lote mínimo de <strong className="text-[#06142D] font-bold">200 unidades</strong>.
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-16 animate-fade-up delay-300 w-full sm:w-auto">
+            <a 
+              href="https://wa.me/5511900000000"
+              onClick={trackGoogleAdsCTA}
+              className="bg-[#009E73] hover:bg-[#008762] text-white px-8 py-4 rounded-full font-bold text-base tracking-tight shadow-[0_8px_24px_rgba(0,158,115,0.18)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3 text-center"
+            >
+              <WhatsAppIcon className="w-5 h-5" />
+              <span>Solicitar Orçamento WhatsApp</span>
+            </a>
+            <a 
+              href="#produto-destaque"
+              className="bg-white hover:bg-slate-50 text-[#334155] border border-slate-200 px-8 py-4 rounded-full font-semibold text-base tracking-tight transition-all duration-300 flex items-center justify-center text-center shadow-sm"
+            >
+              Ver Produto Destaque
+            </a>
+          </div>
+
+          {/* Grid de Vantagens (Sem Imagem) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full animate-fade-up delay-400">
+            {[
+              {
+                icon: Package,
+                title: "Lote Mínimo Viável",
+                desc: "Apenas 200 unidades para testar ou rodar pequenos lotes sem travar capital."
+              },
+              {
+                icon: Clock,
+                title: "1 a 3 Dias Úteis",
+                desc: "Logística ágil e entrega expressa para não deixar sua produção parada."
+              },
+              {
+                icon: ShieldCheck,
+                title: "Grau Alimentício",
+                desc: "Materiais 100% atóxicos certificados pela ANVISA para segurança de alimentos."
+              },
+              {
+                icon: Factory,
+                title: "Fabricação Nacional",
+                desc: "Garantia de padrão industrial premium utilizando tecnologia de ponta."
+              }
+            ].map((v, i) => (
               <div 
-                className="absolute inset-[-4px] rounded-[36px] pointer-events-none z-10"
+                key={i}
+                className="bg-white/60 backdrop-blur-xl border border-gray-200/50 rounded-3xl p-6 text-left shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(47,128,255,0.06)] hover:border-[#2F80FF]/25 transition-all duration-300"
+              >
+                <div className="w-10 h-10 rounded-xl bg-[#EAF2FF] flex items-center justify-center text-[#2F80FF] mb-4">
+                  <v.icon className="w-5.5 h-5.5" />
+                </div>
+                <h3 className="font-extrabold text-sm text-[#06142D] mb-1.5 uppercase tracking-wide">{v.title}</h3>
+                <p className="text-xs text-[#64748B] leading-relaxed">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Nova Seção: Foco no Produto Destaque (Anteriormente no Hero) */}
+      <section id="produto-destaque" className="py-24 px-6 relative bg-white border-t border-b border-slate-200/50">
+        <div className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle at 10% 50%, rgba(47, 128, 255, 0.04), transparent 45%)'
+          }}
+        />
+
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Coluna Esquerda: Mockup Ampliado do Produto com Foco Total */}
+          <div className="relative flex items-center justify-center w-full px-4 sm:px-0">
+            {/* Efeitos de fundo e glow para dar destaque */}
+            <div className="absolute w-[80%] h-[80%] bg-gradient-to-tr from-[#2F80FF]/10 to-[#2563EB]/5 rounded-full blur-[80px] pointer-events-none" />
+
+            <div className="relative w-full max-w-[450px] aspect-square flex items-center justify-center">
+              {/* Borda translúcida de glassmorphism premium */}
+              <div 
+                className="absolute inset-[-6px] rounded-[42px] pointer-events-none z-10"
                 style={{
-                  border: '1.5px solid rgba(47, 128, 255, 0.15)',
+                  border: '1.5px solid rgba(47, 128, 255, 0.18)',
                 }}
               />
- 
+  
               <div 
-                className="absolute inset-0 rounded-[32px] pointer-events-none z-10 animate-fade-up"
+                className="absolute inset-0 rounded-[36px] pointer-events-none z-10"
                 style={{
-                  background: 'radial-gradient(circle at 50% 40%, rgba(47, 128, 255, 0.08), transparent 55%), rgba(255, 255, 255, 0.85)',
+                  background: 'radial-gradient(circle at 50% 40%, rgba(47, 128, 255, 0.06), transparent 50%), rgba(255, 255, 255, 0.9)',
                   border: '1.5px solid #E2E8F0',
-                  boxShadow: '0 15px 40px rgba(15, 23, 42, 0.05), inset 0 0 20px rgba(47, 128, 255, 0.02)',
-                  backdropFilter: 'blur(8px)'
+                  boxShadow: '0 20px 50px rgba(15, 23, 42, 0.08), inset 0 0 24px rgba(47, 128, 255, 0.03)',
+                  backdropFilter: 'blur(12px)'
                 }}
               />
- 
+  
               {/* Lens Flare Azul Sutil */}
               <div 
-                className="absolute top-[2px] left-[2px] w-2 h-2 bg-white rounded-full z-20 pointer-events-none"
+                className="absolute top-[4px] left-[4px] w-3 h-3 bg-white rounded-full z-20 pointer-events-none"
                 style={{
-                  boxShadow: '0 0 15px 6px rgba(47, 128, 255, 0.4), 0 0 5px 2px rgba(255, 255, 255, 1)',
+                  boxShadow: '0 0 20px 8px rgba(47, 128, 255, 0.5), 0 0 8px 3px rgba(255, 255, 255, 1)',
                 }}
               />
- 
+  
               {/* Imagem do Produto Flutuante */}
               <div className="relative w-[100%] h-[100%] z-20 flex items-center justify-center select-none product-float">
                 <img 
                   src="/embala.webp" 
-                  alt="Embalagem a vácuo Rangel de alta barreira"
-                  className="w-[90%] h-[90%] object-contain"
+                  alt="Embalagem flexível Rangel de alta barreira"
+                  className="w-[95%] h-[95%] object-contain"
                   style={{
-                    filter: 'drop-shadow(0 15px 30px rgba(15,23,42,0.12))',
+                    filter: 'drop-shadow(0 20px 40px rgba(15,23,42,0.15))',
                   }}
                 />
               </div>
- 
-              {/* Card Lote Mínimo Flutuante */}
-              <div className="absolute -bottom-6 -left-4 z-30 bg-white rounded-[24px] border border-[#E2E8F0] shadow-[0_14px_40px_rgba(15,23,42,0.08)] p-4 flex items-center gap-3.5 transition-transform duration-300 hover:scale-105">
-                <div className="w-10 h-10 rounded-xl bg-[#EAF2FF] flex items-center justify-center border border-[#2F80FF]/15 text-[#2F80FF]">
-                  <Package className="w-5.5 h-5.5" />
+  
+              {/* Badges Técnicos no Mockup */}
+              <div className="absolute -bottom-6 -left-6 z-30 bg-white/90 backdrop-blur-md rounded-[24px] border border-[#E2E8F0] shadow-[0_14px_40px_rgba(15,23,42,0.08)] p-5 flex items-center gap-3.5 transition-transform duration-300 hover:scale-105">
+                <div className="w-11 h-11 rounded-xl bg-[#EAF2FF] flex items-center justify-center border border-[#2F80FF]/15 text-[#2F80FF]">
+                  <Package className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-[9px] text-[#64748B] uppercase font-bold tracking-widest leading-none mb-1">Lote Mínimo</p>
+                  <p className="text-[10px] text-[#64748B] uppercase font-bold tracking-widest leading-none mb-1">Lote Mínimo</p>
                   <p className="text-base text-[#020817] font-extrabold tracking-tight">A partir de 200 un.</p>
                 </div>
               </div>
- 
-              {/* Card Prazo de Entrega Flutuante */}
-              <div className="absolute -top-6 -right-4 z-30 bg-white rounded-[24px] border border-[#E2E8F0] shadow-[0_14px_40px_rgba(15,23,42,0.08)] p-4 flex items-center gap-3.5 transition-transform duration-300 hover:scale-105">
-                <div className="w-10 h-10 rounded-xl bg-[#EAF2FF] flex items-center justify-center border border-[#2F80FF]/15 text-[#2F80FF]">
-                  <Clock className="w-5.5 h-5.5" />
+  
+              <div className="absolute -top-6 -right-6 z-30 bg-white/90 backdrop-blur-md rounded-[24px] border border-[#E2E8F0] shadow-[0_14px_40px_rgba(15,23,42,0.08)] p-5 flex items-center gap-3.5 transition-transform duration-300 hover:scale-105">
+                <div className="w-11 h-11 rounded-xl bg-[#EAF2FF] flex items-center justify-center border border-[#2F80FF]/15 text-[#2F80FF]">
+                  <Clock className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-[9px] text-[#64748B] uppercase font-bold tracking-widest leading-none mb-1">Prazo de Entrega</p>
+                  <p className="text-[10px] text-[#64748B] uppercase font-bold tracking-widest leading-none mb-1">Prazo de Entrega</p>
                   <p className="text-base text-[#020817] font-extrabold tracking-tight">1 a 3 Dias Úteis</p>
                 </div>
               </div>
- 
+            </div>
+          </div>
+
+          {/* Coluna Direita: Informações Detalhadas do Produto */}
+          <div className="max-w-2xl text-left flex flex-col justify-center">
+            <span className="inline-flex self-start items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF2FF] border border-[#2F80FF]/20 text-[#2F80FF] text-xs font-bold uppercase tracking-wider mb-6">
+              <Sparkles className="w-4 h-4" />
+              Produto de Destaque
+            </span>
+            
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#06142D] mb-6 tracking-tight leading-tight">
+              Embalagem Pouch Flexível <br />
+              <span className="text-[#2F80FF]">Laminada com Alta Barreira</span>
+            </h2>
+
+            <p className="text-[#64748B] text-base sm:text-lg leading-relaxed mb-8">
+              A nossa embalagem de destaque é projetada especificamente para marcas que exigem conservação impecável do produto final. Com acabamento translúcido de altíssima clareza e rigidez estrutural, ela oferece a barreira perfeita contra os elementos externos.
+            </p>
+
+            <div className="space-y-4 mb-8">
+              {[
+                {
+                  title: "Selagem Hermética Avançada",
+                  desc: "Polímeros de alta fusão que evitam micro-fissuras e garantem a integridade total da selagem."
+                },
+                {
+                  title: "Barreira Isoladora Multipropósito",
+                  desc: "Proteção total contra oxigênio, umidade, gordura e odores para manter a frescura original."
+                },
+                {
+                  title: "Aparência Premium no PDV",
+                  desc: "Material cristalino de altíssima transparência que valoriza o produto e atrai o olhar do consumidor."
+                }
+              ].map((item, index) => (
+                <div key={index} className="flex gap-4 items-start">
+                  <div className="w-6 h-6 rounded-full bg-[#EAF2FF] border border-[#2F80FF]/15 flex items-center justify-center text-[#2F80FF] shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#06142D] text-sm sm:text-base">{item.title}</h4>
+                    <p className="text-xs sm:text-sm text-[#64748B] mt-0.5">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <a 
+                href="https://wa.me/5511900000000"
+                onClick={trackGoogleAdsCTA}
+                className="bg-[#009E73] hover:bg-[#008762] text-white px-8 py-4 rounded-full font-bold text-base tracking-tight shadow-[0_8px_24px_rgba(0,158,115,0.18)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3 text-center"
+              >
+                <WhatsAppIcon className="w-5 h-5" />
+                <span>Orçar esta Embalagem</span>
+              </a>
+              <a 
+                href="#solucoes"
+                className="bg-white hover:bg-slate-50 text-[#334155] border border-slate-200 px-8 py-4 rounded-full font-semibold text-base tracking-tight transition-all duration-300 flex items-center justify-center text-center shadow-sm"
+              >
+                Ver Outros Formatos
+              </a>
             </div>
           </div>
         </div>
@@ -373,7 +461,7 @@ export default function RangelLandingPage() {
               A ciência por trás da <span className="text-[#2F80FF]">Alta Barreira</span>
             </h2>
             <p className="text-base sm:text-lg text-slate-400 leading-relaxed">
-              Nossas embalagens a vácuo são desenvolvidas com estruturas multilaminadas de altíssima performance técnica, bloqueando totalmente os principais agentes de degradação.
+              Nossas embalagens flexíveis são desenvolvidas com estruturas multilaminadas de altíssima performance técnica, bloqueando totalmente os principais agentes de degradação.
             </p>
           </div>
 
@@ -387,18 +475,18 @@ export default function RangelLandingPage() {
               
               {[
                 { 
-                  name: "Camada Externa Mecânica (PET/NYLON)", 
+                  name: "Camada Externa Mecânica (PET)", 
                   desc: "Alta resistência contra furos, rasgos, impactos de logística e abrasão física.", 
                   color: "bg-[#0B1F3A]/40 border-white/5 text-slate-200" 
                 },
                 { 
-                  name: "Camada de Barreira Absoluta (EVOH/ALU/PVDC)", 
+                  name: "Camada de Barreira Absoluta (ALU)", 
                   desc: "Bloqueio microscópico intransponível contra oxigênio, vapor de água, umidade, gorduras e aromas externos.", 
                   color: "bg-[#2563EB] text-white border-[#2F80FF]/30 shadow-[0_8px_30px_rgba(37,99,235,0.15)]" 
                 },
                 { 
                   name: "Camada de Selagem Interna (PE / PP Especial)", 
-                  desc: "Polímero de grau alimentício que garante selagem hermética impecável a vácuo, sem vazamentos e atóxico.", 
+                  desc: "Polímero de grau alimentício que garante selagem hermética impecável, sem vazamentos e atóxico.", 
                   color: "bg-[#0B1F3A]/40 border-white/5 text-slate-200" 
                 }
               ].map((layer, index) => (
@@ -426,7 +514,7 @@ export default function RangelLandingPage() {
                 },
                 {
                   title: "Proteção contra Oxigênio",
-                  desc: "Impede a oxidação lipídica e o escurecimento do produto, preservando o aspecto visual fresco."
+                  desc: "Impede a oxidação lipídica e o escurecimento do produto, preservando o aspect visual fresco."
                 },
                 {
                   title: "Bloqueio de Umidade",
@@ -593,7 +681,7 @@ export default function RangelLandingPage() {
                   Sua embalagem pronta em tempo recorde
                 </h3>
                 <p className="text-sm text-[#64748B] max-w-xl leading-relaxed">
-                  Enquanto a concorrência tradicional exige que você planeje seus estoques com meses de antecedência, nós agilizamos sua operation para você rodar novos lotes ou testes instantaneamente.
+                  Enquanto a concorrência tradicional exige que você planeje seus estoques com meses de antecedência, nós agilizamos sua operação para você rodar novos lotes ou testes instantaneamente.
                 </p>
               </div>
 
@@ -674,7 +762,7 @@ export default function RangelLandingPage() {
             <div>
               <h3 className="text-lg font-bold text-[#020817] mb-2">Estruturas Sob Medida</h3>
               <p className="text-xs text-[#64748B] leading-relaxed">
-                Seja vácuo plano, sanfonado com ou sem válvula, stand up pouch ou bisnagas. Desenvolvemos com as micragens e tamanhos exatos para o seu produto.
+                Seja pouch plano, sanfonado com ou sem válvula, stand up pouch ou bisnagas. Desenvolvemos com as micragens e tamanhos exatos para o seu produto.
               </p>
             </div>
           </div>
@@ -773,8 +861,6 @@ export default function RangelLandingPage() {
         </div>
       </section>
 
-
-
       {/* NOVA SEÇÃO 1: A embalagem ideal depende do que você vende */}
       <section className="py-24 bg-[#F7FAFC] relative overflow-hidden border-b border-slate-200/50">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -862,7 +948,7 @@ export default function RangelLandingPage() {
                 <div className="absolute bottom-8 left-8 right-8 z-20 text-white">
                   <span className="text-[10px] font-black text-[#2F80FF] uppercase tracking-widest block mb-2">Estrutura Laminada Premium</span>
                   <h4 className="text-2xl font-bold tracking-tight">Grupo 3 Corações</h4>
-                  <p className="text-xs text-slate-300 mt-2 leading-relaxed">Laminação de alta barreira para preservação do sabor puro e aroma do café moído a vácuo.</p>
+                  <p className="text-xs text-slate-300 mt-2 leading-relaxed">Laminação de alta barreira para preservação do sabor puro e aroma do café moído.</p>
                 </div>
               </div>
 
@@ -923,7 +1009,7 @@ export default function RangelLandingPage() {
             <div className="lg:col-span-7">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {[
-                  { value: "91.9%", label: "Confiabilidade", desc: "Aprovados em auditoria de integridade de selagem e vácuo." },
+                  { value: "91.9%", label: "Confiabilidade", desc: "Aprovados em auditoria de integridade de selagem." },
                   { value: "59.5%", label: "Velocidade", desc: "De redução no leadtime de lançamento de produtos dos clientes." },
                   { value: "100%", label: "Atóxico", desc: "Embalagens livres de Bisfenol-A e com certificação para alimentos." }
                 ].map((stat, i) => (
@@ -1083,7 +1169,7 @@ export default function RangelLandingPage() {
                 {[
                   { format: "Sanfonada", app: "Café, grãos, pós, cereais, snacks", diff: "Fica estruturada em pé no ponto de venda, valoriza o produto e permite fechos/acessórios." },
                   { format: "Stand Up", app: "Alimentos, naturais, suplementos, pet, cosméticos", diff: "Excelente exposição no PDV e possibilita aplicação de zíper hermético ou válvulas." },
-                  { format: "Pouch", app: "Produtos de maior volume, transporte de insumos", diff: "Alta resistência a rasgos, ótimo rendimento logístico e proteção superior a vácuo." },
+                  { format: "Pouch", app: "Produtos de maior volume, transporte de insumos", diff: "Alta resistência a rasgos, ótimo rendimento logístico e proteção superior contra elementos externos." },
                   { format: "Bisnaga", app: "Requeijão, cremes, doce de leite, cheddar, chocolate", diff: "Praticidade absoluta para produtos viscosos e facilidade no manuseio/dosagem comercial." },
                   { format: "Tin Tie", app: "Cafés especiais e produtos que demandam refechamento", diff: "Acessório acoplado que permite abrir e fechar a embalagem várias vezes sem rasgar." },
                   { format: "Válvula", app: "Cafés em grãos ou moídos que liberam gases", diff: "Válvula desgaseificadora que permite saída de gases e impede entrada do oxigênio." }
@@ -1103,7 +1189,7 @@ export default function RangelLandingPage() {
             {[
               { format: "Sanfonada", app: "Café, grãos, pós, cereais, snacks", diff: "Fica estruturada em pé no ponto de venda, valoriza o produto e permite fechos/acessórios." },
               { format: "Stand Up", app: "Alimentos, naturais, suplementos, pet, cosméticos", diff: "Excelente exposição no PDV e possibilita aplicação de zíper hermético ou válvulas." },
-              { format: "Pouch", app: "Produtos de maior volume, transporte de insumos", diff: "Alta resistência a rasgos, ótimo rendimento logístico e proteção superior a vácuo." },
+              { format: "Pouch", app: "Produtos de maior volume, transporte de insumos", diff: "Alta resistência a rasgos, ótimo rendimento logístico e proteção superior contra elementos externos." },
               { format: "Bisnaga", app: "Requeijão, cremes, doce de leite, cheddar, chocolate", diff: "Praticidade absoluta para produtos viscosos e facilidade no manuseio/dosagem comercial." },
               { format: "Tin Tie", app: "Cafés especiais e produtos que demandam refechamento", diff: "Acessório acoplado que permite abrir e fechar a embalagem várias vezes sem rasgar." },
               { format: "Válvula", app: "Cafés em grãos ou moídos que liberam gases", diff: "Válvula desgaseificadora que permite saída de gases e impede entrada do oxigênio." }
@@ -1152,7 +1238,7 @@ export default function RangelLandingPage() {
                 Fundada em 1991, a Rangel Embalagens nasceu para preencher a lacuna de fornecedores de embalagens plásticas que aliam agilidade, conformidade total e padrão de excelência nacional.
               </p>
               <p className="text-[#64748B] text-xs sm:text-sm leading-relaxed">
-                Nossa fábrica opera em São Paulo com linhas de laminação e corte de precisão tecnológica. Evoluímos de forma contínua com investimentos em processos atóxicos e testes de estanqueidade para garantir as melhores soluções de embalagem a vácuo do mercado brasileiro.
+                Nossa fábrica opera em São Paulo com linhas de laminação e corte de precisão tecnológica. Evoluímos de forma contínua com investimentos em processos atóxicos e testes de estanqueidade para garantir as melhores soluções de embalagem flexível do mercado brasileiro.
               </p>
             </div>
 
@@ -1194,7 +1280,7 @@ export default function RangelLandingPage() {
             
             <div className="relative z-10 max-w-2xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 tracking-tight leading-tight">
-                Embalagens de alta barreira a vácuo a partir de 200 unidades
+                Embalagens de alta barreira a partir de 200 unidades
               </h2>
               <p className="text-slate-300 text-sm sm:text-base mb-10 leading-relaxed font-semibold">
                 Sua produção pronta em até 3 dias úteis. Converse com o nosso time comercial e garanta a melhor embalagem e agilidade operacional para o seu produto escalar.
@@ -1224,7 +1310,7 @@ export default function RangelLandingPage() {
                 <div className="w-8 h-8 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
                   <Package className="text-white w-5 h-5" />
                 </div>
-                <span className="font-bold text-xl text-white">Rangel<span className="text-[#2F80FF]">.</span></span>
+                <span className="font-bold text-xl text-white">Rangel<span className="text-[#2F80FF] font-light text-base ml-1">\soulpack</span></span>
               </div>
               <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-medium">
                 Desenvolvimento e corte sob medida de embalagens flexíveis com alta barreira contra elementos e prazo recorde no mercado.
@@ -1234,7 +1320,7 @@ export default function RangelLandingPage() {
             <div>
               <h4 className="font-semibold text-white mb-6 text-sm uppercase tracking-wider">Formatos</h4>
               <ul className="space-y-4 text-xs sm:text-sm font-semibold">
-                <li><a href="#solucoes" className="hover:text-[#2F80FF] transition-colors">Pouch para Vácuo</a></li>
+                <li><a href="#solucoes" className="hover:text-[#2F80FF] transition-colors">Pouch de Alta Barreira</a></li>
                 <li><a href="#solucoes" className="hover:text-[#2F80FF] transition-colors">Sanfonadas com Válvula</a></li>
                 <li><a href="#solucoes" className="hover:text-[#2F80FF] transition-colors">Stand Up Pouches</a></li>
               </ul>
@@ -1330,7 +1416,7 @@ export default function RangelLandingPage() {
               <p className="font-bold text-[#06142D]">1. Tratamento de Dados (LGPD)</p>
               <p>Coletamos nome, telefone de contato e detalhes comerciais fornecidos por livre e espontânea vontade pelo usuário ao acionar os botões de contato com o WhatsApp Comercial. Seus dados são utilizados única e exclusivamente para elaboração de cotação.</p>
               <p className="font-bold text-[#06142D]">2. Armazenamento e Exclusão</p>
-              <p>Em conformidade com a LGPD, o titular de dados possui o direito de exigir a remoção imediata e integral de qualquer dada pessoal armazenado em nosso sistema, bastando solicitar através do e-mail contato@rangelembalagens.com.br.</p>
+              <p>Em conformidade com a LGPD, o titular de dados possui o direito de exigir a remoção imediata e integral de qualquer dado pessoal armazenado em nosso sistema, bastando solicitar através do e-mail contato@rangelembalagens.com.br.</p>
             </div>
           </div>
         </div>
