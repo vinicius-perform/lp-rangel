@@ -342,21 +342,6 @@ export default function RangelLandingPage() {
               </div>
             </div>
 
-            {/* Características principais */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-              {[
-                { title: "Base Sanfonada", desc: "Estabilidade e excelente destaque no ponto de venda." },
-                { title: "Estrutura Metalizada/Alu", desc: "Máxima proteção contra luz, umidade e oxigênio." },
-                { title: "Alta Barreira", desc: "Ideal para alimentos, cosméticos e itens sensíveis." },
-                { title: "Fechamento Prático", desc: "Disponível com fecho zip, lacre ou bico dosador." }
-              ].map((char, i) => (
-                <div key={i} className="p-3.5 rounded-2xl bg-[#F8FAFC] border border-slate-100 flex flex-col shadow-sm">
-                  <span className="text-xs font-extrabold text-[#06142D] mb-1">{char.title}</span>
-                  <span className="text-[11px] text-[#64748B] leading-tight font-medium">{char.desc}</span>
-                </div>
-              ))}
-            </div>
-
             {/* Cores disponíveis */}
             <div className="mb-8">
               <h4 className="text-[10px] font-extrabold text-[#06142D] uppercase tracking-widest mb-2.5">Cores Disponíveis:</h4>
