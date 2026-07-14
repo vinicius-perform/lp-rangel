@@ -322,15 +322,61 @@ export default function RangelLandingPage() {
             </span>
             
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#06142D] mb-6 tracking-tight leading-tight">
-              Embalagem Pouch Flexível <br />
+              Embalagem Stand Up Pouch <br />
               <span className="text-[#2F80FF]">Laminada com Alta Barreira</span>
             </h2>
 
-            <p className="text-[#64748B] text-base sm:text-lg leading-relaxed mb-8">
-              A nossa embalagem de destaque é projetada especificamente para marcas que exigem conservação impecável do produto final. Com acabamento translúcido de altíssima clareza e rigidez estrutural, ela oferece a barreira perfeita contra os elementos externos.
+            <p className="text-[#64748B] text-base sm:text-lg leading-relaxed mb-6 font-semibold">
+              Opção moderna e funcional que se destaca pela base sanfonada, permitindo que fique em pé sozinha. Ideal para exposição em prateleiras, oferece ótima ergonomia, apelo visual e alta proteção para o seu produto.
             </p>
 
+            {/* Indicada para produtos como */}
+            <div className="mb-6">
+              <h4 className="text-[10px] font-extrabold text-[#06142D] uppercase tracking-widest mb-2.5">Indicada para:</h4>
+              <div className="flex flex-wrap gap-1.5">
+                {["Café", "Snacks", "Alimentos Naturais", "Grãos", "Produtos Pet", "Cosméticos", "Temperos", "Suplementos"].map((tag, i) => (
+                  <span key={i} className="px-2.5 py-1 rounded-full bg-[#EAF2FF] border border-[#2F80FF]/10 text-[11px] font-extrabold text-[#12345A] tracking-tight">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
 
+            {/* Características principais */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+              {[
+                { title: "Base Sanfonada", desc: "Estabilidade e excelente destaque no ponto de venda." },
+                { title: "Estrutura Metalizada/Alu", desc: "Máxima proteção contra luz, umidade e oxigênio." },
+                { title: "Alta Barreira", desc: "Ideal para alimentos, cosméticos e itens sensíveis." },
+                { title: "Fechamento Prático", desc: "Disponível com fecho zip, lacre ou bico dosador." }
+              ].map((char, i) => (
+                <div key={i} className="p-3.5 rounded-2xl bg-[#F8FAFC] border border-slate-100 flex flex-col shadow-sm">
+                  <span className="text-xs font-extrabold text-[#06142D] mb-1">{char.title}</span>
+                  <span className="text-[11px] text-[#64748B] leading-tight font-medium">{char.desc}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Cores disponíveis */}
+            <div className="mb-8">
+              <h4 className="text-[10px] font-extrabold text-[#06142D] uppercase tracking-widest mb-2.5">Cores Disponíveis:</h4>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { name: "Half-Metal", bg: "bg-gradient-to-r from-slate-300 via-white to-slate-300 border-slate-300" },
+                  { name: "Preto Fosco", bg: "bg-[#1A1A1A] border-[#1A1A1A]" },
+                  { name: "Prata", bg: "bg-gradient-to-br from-slate-400 via-slate-200 to-slate-400 border-slate-300" },
+                  { name: "Preto Brilhante", bg: "bg-black border-black" },
+                  { name: "Branco", bg: "bg-white border-slate-200" },
+                  { name: "Transparente", bg: "bg-white/40 border-slate-300 backdrop-blur-sm" },
+                  { name: "Kraft", bg: "bg-[#C4A88A] border-[#B5987A]" }
+                ].map((color, i) => (
+                  <div key={i} className="flex items-center gap-1.5 bg-[#F8FAFC] border border-slate-100 px-2.5 py-1 rounded-full shadow-sm hover:scale-103 transition-transform cursor-pointer">
+                    <span className={`w-3 h-3 rounded-full border shadow-sm shrink-0 ${color.bg}`} />
+                    <span className="text-[10px] font-bold text-[#475569]">{color.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <a 
