@@ -285,7 +285,7 @@ export default function RangelLandingPage() {
               {/* Imagem do Produto Flutuante */}
               <div className="relative w-[100%] h-[100%] z-20 flex items-center justify-center select-none product-float">
                 <img 
-                  src="/embala.webp" 
+                  src="/img3.webp" 
                   alt="Embalagem flexível Rangel de alta barreira"
                   className="w-[95%] h-[95%] object-contain"
                   style={{
