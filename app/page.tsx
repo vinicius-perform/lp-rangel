@@ -1238,7 +1238,7 @@ export default function RangelLandingPage() {
                 Fundada em 1991, a Rangel Embalagens nasceu para preencher a lacuna de fornecedores de embalagens plásticas que aliam agilidade, conformidade total e padrão de excelência nacional.
               </p>
               <p className="text-[#64748B] text-xs sm:text-sm leading-relaxed">
-                Nossa fábrica opera em São Paulo com linhas de laminação e corte de precisão tecnológica. Evoluímos de forma contínua com investimentos em processos atóxicos e testes de estanqueidade para garantir as melhores soluções de embalagem flexível do mercado brasileiro.
+                Nossa fábrica opera em São Paulo com linhas de laminação e corte de precisão tecnológica. Evoluímos de forma contínua com investimentos em processos atóxicos e testes de estanqueidade para garantir as melhores soluções de embalagem flexível.
               </p>
             </div>
 
