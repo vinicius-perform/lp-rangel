@@ -258,7 +258,7 @@ export default function RangelLandingPage() {
             <div className="relative w-full max-w-[450px] aspect-square flex items-center justify-center">
               {/* Borda translúcida de glassmorphism premium */}
               <div 
-                className="absolute inset-[-6px] rounded-[42px] pointer-events-none z-10"
+                className="absolute inset-[-6px] rounded-[42px] pointer-events-none z-30"
                 style={{
                   border: '1.5px solid rgba(47, 128, 255, 0.18)',
                 }}
@@ -276,21 +276,18 @@ export default function RangelLandingPage() {
   
               {/* Lens Flare Azul Sutil */}
               <div 
-                className="absolute top-[4px] left-[4px] w-3 h-3 bg-white rounded-full z-20 pointer-events-none"
+                className="absolute top-[4px] left-[4px] w-3 h-3 bg-white rounded-full z-30 pointer-events-none"
                 style={{
                   boxShadow: '0 0 20px 8px rgba(47, 128, 255, 0.5), 0 0 8px 3px rgba(255, 255, 255, 1)',
                 }}
               />
   
-              {/* Imagem do Produto Flutuante */}
-              <div className="relative w-[100%] h-[100%] z-20 flex items-center justify-center select-none product-float">
+              {/* Imagem do Produto */}
+              <div className="relative w-full h-full z-20 overflow-hidden rounded-[36px] select-none">
                 <img 
                   src="/img3.webp" 
                   alt="Embalagem flexível Rangel de alta barreira"
-                  className="w-[95%] h-[95%] object-contain"
-                  style={{
-                    filter: 'drop-shadow(0 20px 40px rgba(15,23,42,0.15))',
-                  }}
+                  className="w-full h-full object-cover"
                 />
               </div>
   
