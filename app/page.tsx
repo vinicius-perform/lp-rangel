@@ -112,7 +112,7 @@ export default function RangelLandingPage() {
             <a href="#sobre" className="hover:text-[#2563EB] transition-colors">Sobre Nós</a>
             
             <a 
-              href="https://wa.me/5511900000000"
+              href="https://wa.link/k09gtn"
               onClick={trackGoogleAdsCTA}
               className="bg-[#009E73] hover:bg-[#008762] text-white px-5 py-2.5 rounded-full font-bold transition-all shadow-[0_8px_24px_rgba(0,158,115,0.18)] hover:-translate-y-0.5 flex items-center gap-2"
             >
@@ -135,7 +135,7 @@ export default function RangelLandingPage() {
              <a href="#diferenciais" onClick={() => setMobileMenuOpen(false)}>Diferenciais</a>
              <a href="#sobre" onClick={() => setMobileMenuOpen(false)}>Sobre Nós</a>
              <a 
-               href="https://wa.me/5511900000000" 
+               href="https://wa.link/k09gtn" 
                onClick={(e) => { setMobileMenuOpen(false); trackGoogleAdsCTA(e); }}
                className="bg-[#009E73] hover:bg-[#008762] text-white px-6 py-3 rounded-full font-bold text-center flex items-center justify-center gap-2 shadow-[0_8px_24px_rgba(0,158,115,0.18)]"
              >
@@ -187,7 +187,7 @@ export default function RangelLandingPage() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-16 animate-fade-up delay-300 w-full sm:w-auto">
             <a 
-              href="https://wa.me/5511900000000"
+              href="https://wa.link/k09gtn"
               onClick={trackGoogleAdsCTA}
               className="bg-[#009E73] hover:bg-[#008762] text-white px-8 py-4 rounded-full font-bold text-base tracking-tight shadow-[0_8px_24px_rgba(0,158,115,0.18)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3 text-center"
             >
@@ -365,7 +365,7 @@ export default function RangelLandingPage() {
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <a 
-                href="https://wa.me/5511900000000"
+                href="https://wa.link/k09gtn"
                 onClick={trackGoogleAdsCTA}
                 className="bg-[#009E73] hover:bg-[#008762] text-white px-8 py-4 rounded-full font-bold text-base tracking-tight shadow-[0_8px_24px_rgba(0,158,115,0.18)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3 text-center"
               >
@@ -438,7 +438,7 @@ export default function RangelLandingPage() {
 
           <div className="flex justify-center mt-16">
             <a 
-              href="https://wa.me/5511900000000"
+              href="https://wa.link/k09gtn"
               onClick={trackGoogleAdsCTA}
               className="bg-[#009E73] hover:bg-[#008762] text-white px-8 py-4 rounded-full font-bold text-base shadow-[0_8px_24px_rgba(0,158,115,0.18)] hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-3 group text-center"
             >
@@ -643,7 +643,7 @@ export default function RangelLandingPage() {
 
           <div className="flex justify-center">
             <a 
-              href="https://wa.me/5511900000000"
+              href="https://wa.link/k09gtn"
               onClick={trackGoogleAdsCTA}
               className="bg-[#009E73] hover:bg-[#008762] text-white px-8 py-4 rounded-full font-bold text-base shadow-[0_8px_24px_rgba(0,158,115,0.18)] hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2"
             >
@@ -788,7 +788,7 @@ export default function RangelLandingPage() {
         {/* Call to Action Comercial Verde */}
         <div className="flex justify-center">
           <motion.a 
-            href="https://wa.me/5511900000000"
+            href="https://wa.link/k09gtn"
             onClick={trackGoogleAdsCTA}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -822,7 +822,7 @@ export default function RangelLandingPage() {
                 Se você está validando um novo produto, lançando uma linha, testando o mercado ou profissionalizando sua marca, a embalagem não precisa ser uma barreira. Com pedidos a partir de 200 unidades, é possível começar com mais segurança, menos estoque parado e mais presença no ponto de venda.
               </p>
               <a 
-                href="https://wa.me/5511900000000"
+                href="https://wa.link/k09gtn"
                 onClick={trackGoogleAdsCTA}
                 className="bg-[#009E73] hover:bg-[#008762] text-white px-6 py-3.5 rounded-full font-bold text-sm shadow-[0_8px_24px_rgba(0,158,115,0.18)] hover:-translate-y-0.5 transition-all inline-flex items-center gap-2"
               >
@@ -1132,7 +1132,7 @@ export default function RangelLandingPage() {
 
           <div className="flex justify-center">
             <a 
-              href="https://wa.me/5511900000000"
+              href="https://wa.link/k09gtn"
               onClick={trackGoogleAdsCTA}
               className="bg-[#009E73] hover:bg-[#008762] text-white px-8 py-4 rounded-full font-bold text-base shadow-[0_8px_24px_rgba(0,158,115,0.18)] hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2"
             >
@@ -1291,7 +1291,7 @@ export default function RangelLandingPage() {
               
               <div className="flex justify-center">
                 <a 
-                  href="https://wa.me/5511900000000"
+                  href="https://wa.link/k09gtn"
                   onClick={trackGoogleAdsCTA}
                   className="bg-[#009E73] hover:bg-[#008762] text-white px-10 py-5 rounded-full font-extrabold shadow-[0_8px_24px_rgba(0,158,115,0.18)] hover:-translate-y-0.5 transition-all text-lg flex items-center justify-center gap-3"
                 >
@@ -1346,7 +1346,7 @@ export default function RangelLandingPage() {
                 <li>Parque da Moóca, São Paulo/SP</li>
               </ul>
               <a 
-                href="https://wa.me/5511900000000"
+                href="https://wa.link/k09gtn"
                 onClick={trackGoogleAdsCTA}
                 className="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 bg-emerald-950/60 px-3.5 py-2 rounded-full border border-emerald-500/20 shadow-sm"
               >
@@ -1455,7 +1455,7 @@ export default function RangelLandingPage() {
           Falar com Comercial
         </span>
         <a
-          href="https://wa.me/5511900000000"
+          href="https://wa.link/k09gtn"
           onClick={trackGoogleAdsCTA}
           className="w-14 h-14 bg-[#009E73] hover:bg-[#008762] rounded-full flex items-center justify-center shadow-[0_8px_24px_rgba(0,158,115,0.25)] hover:-translate-y-1 transition-all duration-300 text-white relative border border-emerald-500/20"
         >
